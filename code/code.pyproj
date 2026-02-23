@@ -26,6 +26,12 @@
     <Compile Include="labyrinth_generator.py" />
     <Compile Include="main.py" />
     <Compile Include="tile.py" />
+    <Compile Include="UI\uielement.py" />
+    <Compile Include="UI\uislider.py" />
+    <Compile Include="UI\uitext.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="UI\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in

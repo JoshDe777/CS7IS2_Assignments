@@ -19,7 +19,7 @@ class Game:
 				if event.type == pygame.QUIT:
 					self.running = False
 		self.beforeUpdate.invoke()
-		self.window.fill(color="black")
+		self.window.fill(color="azure4")
 
 	def request_close(self):
 		pygame.event.post(pygame.event.Event(pygame.QUIT))

@@ -44,27 +44,22 @@ class Labyrinth:
 
 		return res
 
-	def is_valid(self, pos: Vector2, grid: list, path: list) -> bool:
+	def is_valid(self, pos: Vector2, grid: list) -> bool:
 		in_grid = pos.x >= 0 and pos.y >= 0 and pos.x < self.size[0] and pos.y < self.size[1]
-		not_in_path = True
-		for tile in path:
-			if tile == pos:
-				not_in_path = False
-				break
-
-		return in_grid and not_in_path
+		return in_grid
 
 	def build_labyrinth(self):
 		# establish a random goal point within the maze
 		grid = [[0 for _ in range(self.size[1])] for _ in range(self.size[0])]
 		self.goal = Vector2(randint(0, self.size[0]-1), randint(0, self.size[1]-1))
+		goal_tile = Tile(pos=self.goal, color=type_to_color("goal"))
+		self.labyrinth.append(goal_tile)
 
 		self.start = self.goal
 		# poll a random start position until start != goal
 		while self.start == self.goal:
 			self.start = Vector2(randint(0, self.size[0]-1), randint(0, self.size[1]-1))
 
-		self.random_walk(self.goal, grid)
 		self.random_walk(self.start, grid)
 		while(not self.is_sufficiently_explored(grid, 1.0)):
 			unvisited_cells = self.get_unexplored_tiles(grid)
@@ -74,34 +69,52 @@ class Labyrinth:
 		print(f"Generated Maze with {len(self.labyrinth)} tiles! (dimensions {self.size[0]}x{self.size[1]})")
 
 	def random_walk(self, start_pos: Vector2, grid: list):
+		# loop-erased Wilson walk.
 		current_path = []
-		grid[int(start_pos.x)][int(start_pos.y)] = 1
-		current_path.append(start_pos)
+		visited = {}
 
+		current_path.append(start_pos)
 		current = start_pos
-		while(True):
+		walk_iterations_counter = 0
+
+		while not self.is_in_labyrinth(current):
+			walk_iterations_counter += 1
+			print(f"Entering iteration {walk_iterations_counter}.")
+
 			neighbours = []
 			for _dir in cardinal_directions:
 				n = current + _dir
-				if(self.is_valid(n, grid, current_path)):
+				if(self.is_valid(n, grid)):
 					neighbours.append(n)
 
-			if len(neighbours) == 0:
-				break
-
 			next_pos = neighbours[randint(0, len(neighbours) - 1)]
-			current_path.append(next_pos)
 			current = next_pos
 
-			if(self.is_in_labyrinth(current)):
-				break
+			# loop erasure; Truncate paths when reaching a tile already visited in the random walk.
+			key = (int(current.x), int(current.y))
+			if key in visited:
+				loop_start = visited[key]
+				current_path = current_path[:loop_start+1]
 
-		last = None
-		for pos in current_path:
+				visited = {(int(coords.x), int(coords.y)): index for index, coords in enumerate(current_path)}
+			else:
+				visited[key] = len(current_path)
+				current_path.append(next_pos)
+
+			end = current
+
+
+		print(f"Exiting Random Walk with {len(current_path)} nodes.\n----------")
+
+		last = self.get_tile_at(end)
+		for pos in reversed(current_path):
 			grid[int(pos.x)][int(pos.y)] = 1
 
 			# get tile at pos.
 			tile = self.get_tile_at(pos)
+
+			if tile == last: 
+				continue
 
 			# create new tile if none exists.
 			if not tile:
