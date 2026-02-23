@@ -1,6 +1,7 @@
 ﻿import pygame
 from event import Event
 from labyrinth_generator import Labyrinth
+from user_interface import LabyrinthInterface
 
 class Game:
 	def __init__(self, name: str, display_size: tuple, labyrinth_size: pygame.Vector2):
@@ -8,6 +9,7 @@ class Game:
 		self.running = True
 		self.deltaTime = 0.0
 		self.size = display_size
+		pygame.font.init()
 		self.worldToScreen = pygame.Vector2(display_size[0] / 2, display_size[1] / 2)
 		self.labyrinth_size = labyrinth_size
 		self.update = Event()
@@ -30,6 +32,7 @@ class Game:
 
 	def onShutdown(self):
 		print("Exiting game.")
+		pygame.font.quit()
 		pygame.quit()
 
 	def run(self):
@@ -37,6 +40,8 @@ class Game:
 		self.window = pygame.display.set_mode(self.size)
 		self.clock = pygame.time.Clock()
 		self.labyrinth = Labyrinth(size=self.labyrinth_size, game=self, worldOffset=pygame.Vector2(0, 0))
+		self.ui = LabyrinthInterface(self)
+
 		while self.running:
 			self.onBeforeUpdate()
 			self.update.invoke()

@@ -26,9 +26,12 @@
     <Compile Include="labyrinth_generator.py" />
     <Compile Include="main.py" />
     <Compile Include="tile.py" />
+    <Compile Include="UI\uibutton.py" />
     <Compile Include="UI\uielement.py" />
+    <Compile Include="UI\uiinputfield.py" />
     <Compile Include="UI\uislider.py" />
     <Compile Include="UI\uitext.py" />
+    <Compile Include="user_interface.py" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="UI\" />

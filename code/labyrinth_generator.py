@@ -75,11 +75,8 @@ class Labyrinth:
 
 		current_path.append(start_pos)
 		current = start_pos
-		walk_iterations_counter = 0
 
 		while not self.is_in_labyrinth(current):
-			walk_iterations_counter += 1
-			print(f"Entering iteration {walk_iterations_counter}.")
 
 			neighbours = []
 			for _dir in cardinal_directions:
@@ -103,8 +100,6 @@ class Labyrinth:
 
 			end = current
 
-
-		print(f"Exiting Random Walk with {len(current_path)} nodes.\n----------")
 
 		last = self.get_tile_at(end)
 		for pos in reversed(current_path):
