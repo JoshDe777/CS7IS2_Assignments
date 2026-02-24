@@ -2,9 +2,10 @@
 import pygame
 from pygame import Rect, Surface, Vector2
 
-tileDim = 45
 
 class Tile:
+	tileDim = 45
+	
 	def __init__(self, pos: Vector2, color: str):
 		self.pos = pos
 		self.neighbours = []
@@ -26,19 +27,22 @@ class Tile:
 
 		return False
 
+	def set_scale(new_scale: float):
+		Tile.tileDim = new_scale
+
 	def draw(self, screen: Surface, worldOffset: Vector2, grid_offset: Vector2):
 		pygame.draw.rect(screen, self.color, Rect(
-			worldOffset.x + tileDim * (self.pos.x + grid_offset.x - 0.5),
-			worldOffset.y + tileDim * (self.pos.y + grid_offset.y + 0.5),
-			tileDim/3, tileDim/3
+			worldOffset.x + self.tileDim * (self.pos.x + grid_offset.x - 0.5),
+			worldOffset.y + self.tileDim * (self.pos.y + grid_offset.y + 0.5),
+			self.tileDim/3, self.tileDim/3
 		))
 
 		for tile in self.pathTiles:
 			tile_border_offset = 0.9 * tile
 			pygame.draw.rect(screen, self.color, Rect(
-				worldOffset.x + tileDim * (self.pos.x + grid_offset.x + tile_border_offset.x / 3 - 0.5), 
-				worldOffset.y + tileDim * (self.pos.y + grid_offset.y + tile_border_offset.y / 3 + 0.5), 
-				tileDim/3, tileDim/3
+				worldOffset.x + self.tileDim * (self.pos.x + grid_offset.x + tile_border_offset.x / 3 - 0.5), 
+				worldOffset.y + self.tileDim * (self.pos.y + grid_offset.y + tile_border_offset.y / 3 + 0.5), 
+				self.tileDim/3, self.tileDim/3
 			))
 
 	def __eq__(self, other):

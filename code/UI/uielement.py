@@ -1,55 +1,18 @@
 ﻿import pygame
 from pygame import Surface, Vector2
 from pygame.math import clamp
-from enum import Enum
 
 class UI_Element:
 	def __init__(self, game):
-		game.update.add_listener(self.get_input)
+		game.eventPoller.add_listener(self.get_input)
 		game.afterUpdate.add_listener(self.draw)
 
-	def get_input(self):
+	def get_input(self, events):
 		pass
 
 	def draw(self, window: Surface, worldOffset: Vector2):
 		pass
 
-class AnchorPos(Enum):
-	TOP_LEFT = 0
-	TOP = 1
-	TOP_RIGHT = 2
-	LEFT = 3
-	CENTRE = 4
-	RIGHT = 5
-	BOTTOM_LEFT = 6
-	BOTTOM = 7
-	BOTTOM_RIGHT = 8
-
-	def get_anchor_position(self, container_pos, container_size, element_size):
-		x, y = container_pos
-		w, h = container_size
-		ew, eh = element_size
-
-		if self == AnchorPos.TOP_LEFT:
-			return Vector2(x, y)
-		if self == AnchorPos.TOP:
-			return Vector2(x + w/2 - ew/2, y)
-		if self == AnchorPos.TOP_RIGHT:
-			return Vector2(x + w - ew, y)
-
-		if self == AnchorPos.LEFT:
-			return Vector2(x, y + h/2 - eh/2)
-		if self == AnchorPos.CENTER:
-			return Vector2(x + w/2 - ew/2, y + h/2 - eh/2)
-		if self == AnchorPos.RIGHT:
-			return Vector2(x + w - ew, y + h/2 - eh/2)
-
-		if self == AnchorPos.BOTTOM_LEFT:
-			return Vector2(x, y + h - eh)
-		if self == AnchorPos.BOTTOM:
-			return Vector2(x + w/2 - ew/2, y + h - eh)
-		if self == AnchorPos.BOTTOM_RIGHT:
-			return Vector2(x + w - ew, y + h - eh)
 
 class UI_Text(UI_Element):
 	def __init__(self, game, text: str, pos: Vector2, font_color="white", font_size = 20):
@@ -62,15 +25,16 @@ class UI_Text(UI_Element):
 
 	def draw(self, window: Surface, worldOffset: Vector2):
 		surf = self.font.render(self.text, True, self.font_color)
-		window.blit(surf, self.screen_pos)
+		window.blit(surf, self.screen_pos - Vector2(surf.get_width() / 2, 0))
 
 	def set_text(self, text: str):
 		self.text = text
 
+
 class UI_Slider(UI_Element):
-	def __init__(self, game, pos: Vector2, width: float, min_val: float, max_val: float, value: float):
+	def __init__(self, game, pos: Vector2, width: float, min_val: float, max_val: float, value: float, on_slide_callback, on_release_callback=None):
 		super().__init__(game)
-		self.rect = pygame.Rect(pos.x, pos.y, width, 10)
+		self.rect = pygame.Rect(pos.x - (width / 2), pos.y, width, 10)
 		self.min = min_val
 		self.max = max_val
 		self.value = value
@@ -78,6 +42,8 @@ class UI_Slider(UI_Element):
 		self.sliderColor = "black"
 		self.fillColor = "gray"
 		self.sliderSize = 6
+		self.slide_callback = on_slide_callback
+		self.release_callback = on_release_callback
 
 	def set_slider_colour(self, colour: str):
 		self.sliderColor = colour
@@ -91,25 +57,33 @@ class UI_Slider(UI_Element):
 	def set_max(self, max_val: float):
 		self.max = max_val
 
+	def set_value(self, val: float):
+		self.value = val
+
 	def get_value(self) -> float:
 		return self.value
 
-	def get_input(self):
-		for event in pygame.event.get():
+	def get_input(self, events):
+		for event in events:
 			if event.type == pygame.MOUSEBUTTONDOWN and self.rect.collidepoint(event.pos):
 				self.active = True
-			if event.type == pygame.MOUSEBUTTONUP:
+			if event.type == pygame.MOUSEBUTTONUP and self.active:
 				self.active = False
+				if self.release_callback is not None:
+					self.release_callback(self.value)
 
 			if event.type == pygame.MOUSEMOTION and self.active:
 				# get x position relative to the slider progression.
 				progress = clamp((event.pos[0] - self.rect.x) / self.rect.w, 0.0, 1.0)
 				self.value = self.min + progress * (self.max - self.min)
+				if self.slide_callback is not None:
+					self.slide_callback(self.value)
 
 	def draw(self, window: Surface, worldOffset: Vector2):
 		pygame.draw.rect(window, self.fillColor, self.rect)
 		progress = self.rect.x + (self.value - self.min)/(self.max-self.min)*self.rect.w
 		pygame.draw.circle(window, self.sliderColor, (int(progress), self.rect.y + 5), self.sliderSize)
+
 
 class UI_Button(UI_Element):
 	def __init__(self, game, buttonText: str, rect, on_press_action):
@@ -121,6 +95,10 @@ class UI_Button(UI_Element):
 		self.font_colour = "black"
 		self.font = pygame.font.SysFont(None, 20)
 
+	def set_position(self, pos: Vector2):
+		dims = Vector2(self.rect.width, self.rect.height)
+		self.rect = pygame.Rect(pos.x - (dims.x / 2), pos.y - (dims.y / 2), dims.x, dims.y)
+
 	def set_text(self, text: str):
 		self.text = text
 
@@ -130,40 +108,15 @@ class UI_Button(UI_Element):
 	def set_text_colour(self, colour: str):
 		self.font_colour = colour
 
-	def get_input(self):
-		for event in pygame.event.get():
+	def get_input(self, events):
+		for event in events:
 			if event.type == pygame.MOUSEBUTTONDOWN and self.rect.collidepoint(event.pos):
 				self.callback()
 
 	def draw(self, window: Surface, worldOffset: Vector2):
 		pygame.draw.rect(window, self.colour, self.rect)
-		label = self.font.render(self.text, antialias=True, color=self.font_colour)
+		label = self.font.render(self.text, True, self.font_colour)
 		window.blit(label, label.get_rect(center=self.rect.center))
-
-class UI_InputInt(UI_Element):
-    def __init__(self, game, pos, width, value=10):
-        super().__init__(game)
-        self.rect = pygame.Rect(pos[0], pos[1], width, 30)
-        self.value = str(value)
-        self.active = False
-        self.font = pygame.font.SysFont(None, 20)
-
-    def handle_event(self, e):
-        if e.type == pygame.MOUSEBUTTONDOWN:
-            self.active = self.rect.collidepoint(e.pos)
-
-        if e.type == pygame.KEYDOWN and self.active:
-            if e.key == pygame.K_BACKSPACE:
-                self.value = self.value[:-1]
-            elif e.unicode.isdigit():
-                new = self.value + e.unicode
-                if 0 <= int(new) <= 50:
-                    self.value = new
-
-    def draw(self, window, worldOffset: Vector2):
-        pygame.draw.rect(window, "white", self.rect, 2)
-        txt = self.font.render(self.value, True, "black")
-        window.blit(txt, (self.rect.x+5, self.rect.y+5))
 
 
 class UI_Panel(UI_Element):
@@ -177,5 +130,63 @@ class UI_Panel(UI_Element):
 		self.colour = colour
 
 	def draw(self, window, worldOffset):
-		rect = pygame.Rect(self.pos.x, self.pos.y, self.size.x, self.size.y)
+		rect = pygame.Rect(self.pos.x - (self.size.x / 2), self.pos.y - (self.size.y / 2), self.size.x, self.size.y)
 		pygame.draw.rect(window, self.colour, rect)
+
+class UI_InputField(UI_Element):
+	def __init__(self, game, pos: Vector2, size: Vector2, on_submit=None, initial_text=""):
+		super().__init__(game)
+
+		self.rect = pygame.Rect(
+			pos.x - size.x/2,
+			pos.y - size.y/2,
+			size.x,
+			size.y
+		)
+
+		self.text = initial_text
+		self.active = False
+		self.font = pygame.font.SysFont(None, 20)
+
+		self.bg_color = "white"
+		self.text_color = "black"
+		self.active_color = "lightskyblue"
+
+		self.on_submit = on_submit
+
+	def get_input(self, events):
+		for event in events:
+			if event.type == pygame.MOUSEBUTTONDOWN:
+				# activate if clicked
+				self.active = self.rect.collidepoint(event.pos)
+
+			if not self.active:
+				continue
+
+			if event.type == pygame.KEYDOWN:
+				if event.key == pygame.K_RETURN:
+					if self.on_submit:
+						# convert to int if possible
+						try:
+							value = int(self.text)
+						except:
+							value = None
+						self.on_submit(value)
+
+				elif event.key == pygame.K_BACKSPACE:
+					self.text = self.text[:-1]
+
+				else:
+					# allow only digits
+					if event.unicode.isdigit():
+						self.text += event.unicode
+
+	def set_text(self, text: str):
+		self.text = text
+
+	def draw(self, window: Surface, worldOffset: Vector2):
+		color = self.active_color if self.active else self.bg_color
+		pygame.draw.rect(window, color, self.rect)
+
+		txt_surface = self.font.render(self.text, True, self.text_color)
+		window.blit(txt_surface, (self.rect.x + 5, self.rect.y + 5))

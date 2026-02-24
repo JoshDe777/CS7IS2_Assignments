@@ -4,7 +4,7 @@ from labyrinth_generator import Labyrinth
 from user_interface import LabyrinthInterface
 
 class Game:
-	def __init__(self, name: str, display_size: tuple, labyrinth_size: pygame.Vector2):
+	def __init__(self, name: str, display_size: tuple, labyrinth_size: pygame.Vector2, labyrinth_seed: int):
 		self.name = name
 		self.running = True
 		self.deltaTime = 0.0
@@ -12,14 +12,18 @@ class Game:
 		pygame.font.init()
 		self.worldToScreen = pygame.Vector2(display_size[0] / 2, display_size[1] / 2)
 		self.labyrinth_size = labyrinth_size
+		self.labyrinth_seed = labyrinth_seed
 		self.update = Event()
 		self.beforeUpdate = Event()
 		self.afterUpdate = Event()
+		self.eventPoller = Event()
 
 	def onBeforeUpdate(self):
-		for event in pygame.event.get():
+		events = pygame.event.get()
+		for event in events:
 				if event.type == pygame.QUIT:
 					self.running = False
+		self.eventPoller.invoke(events)
 		self.beforeUpdate.invoke()
 		self.window.fill(color="azure4")
 
@@ -39,7 +43,7 @@ class Game:
 		pygame.init()
 		self.window = pygame.display.set_mode(self.size)
 		self.clock = pygame.time.Clock()
-		self.labyrinth = Labyrinth(size=self.labyrinth_size, game=self, worldOffset=pygame.Vector2(0, 0))
+		self.labyrinth = Labyrinth(size=self.labyrinth_size, game=self, worldOffset=pygame.Vector2(0, 0), seed=self.labyrinth_seed)
 		self.ui = LabyrinthInterface(self)
 
 		while self.running:
