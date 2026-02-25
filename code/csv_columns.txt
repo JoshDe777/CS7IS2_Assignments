@@ -1,0 +1,6 @@
+﻿run ID
+solver type
+labyrinth dimensions
+solution depth
+runtime in frames
+"tile efficiency" - n(tiles processed) / nTotal

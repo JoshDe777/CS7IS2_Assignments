@@ -1,7 +1,9 @@
 ﻿import pygame
+from Solvers.bfs_solver import BFS_Solver
+from Solvers.dfs_solver import DFS_Solver
 from event import Event
-from labyrinth_generator import Labyrinth
-from user_interface import LabyrinthInterface
+from Labyrinth.labyrinth_generator import Labyrinth
+from UI.user_interface import LabyrinthInterface, SolverInterface
 
 class Game:
 	def __init__(self, name: str, display_size: tuple, labyrinth_size: pygame.Vector2, labyrinth_seed: int):
@@ -17,6 +19,11 @@ class Game:
 		self.beforeUpdate = Event()
 		self.afterUpdate = Event()
 		self.eventPoller = Event()
+
+		self.solvers = {
+			"BFS": BFS_Solver(self),
+			"DFS": DFS_Solver(self)
+		}
 
 	def onBeforeUpdate(self):
 		events = pygame.event.get()
@@ -45,6 +52,7 @@ class Game:
 		self.clock = pygame.time.Clock()
 		self.labyrinth = Labyrinth(size=self.labyrinth_size, game=self, worldOffset=pygame.Vector2(0, 0), seed=self.labyrinth_seed)
 		self.ui = LabyrinthInterface(self)
+		self.solver_ui = SolverInterface(self)
 
 		while self.running:
 			self.onBeforeUpdate()
