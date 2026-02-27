@@ -1,12 +1,11 @@
 ﻿import pygame
-from pygame import Rect, Surface, Vector2
+from pygame import Rect, Surface, Vector2, Color
 
-from Solvers.tile_data import BFS_Data, DFS_Data
+from Solvers.tile_data import AStarData, BFS_Data, DFS_Data
 
-ON_BEST_PATH_COLOR = "chartreuse2"
-EXPLORED_COLOR = "blue3"
-VISITED_COLOR = "cadetblue2"
-EDGE_COLOR = "darkslategray2"
+ON_BEST_PATH_COLOR = Color("chartreuse2")
+EXPLORED_COLOR = Color("blue3")
+EDGE_COLOR = Color("cadetblue2")
 
 class Tile:
 	tileDim = 45
@@ -19,7 +18,9 @@ class Tile:
 		self.color = color
 		self.data = {
 			"BFS": BFS_Data(),
-			"DFS": DFS_Data()
+			"DFS": DFS_Data(),
+			"A_Star_1": AStarData(euclidean=True),
+			"A_Star_2": AStarData(euclidean=False)
 		}
 
 	def AddNeighbour(self, tile):
@@ -44,6 +45,10 @@ class Tile:
 		self.color = self.baseColor
 		self.data[_type].reset()
 
+	def set_markov_color(self, _type: str, m_val: float):
+		self.color = Color(max(0, -m_val) * 255, max(0, m_val) * 255, 0, 255)
+		self.data[_type] = m_val
+
 	def mark_edge(self, _type: str, pred):
 		self.color = EDGE_COLOR if self.baseColor == "white" else self.baseColor
 		# case BFS & DFS:
@@ -51,19 +56,15 @@ class Tile:
 
 		if _type == "BFS":
 			self.data[_type].explore()
-		elif _type == "DFS":
-			# visualization correction for DFS which can re-mark already explored tiles.
-			if self.data[_type].explored:
-				self.color = EXPLORED_COLOR if self.baseColor == "white" else self.baseColor
-
-	def mark_visited(self, _type: str):
-		self.color = VISITED_COLOR if self.baseColor == "white" else self.baseColor
 
 	def mark_explored(self, _type: str, dist):
 		self.color = EXPLORED_COLOR if self.baseColor == "white" else self.baseColor
-		# case both BFS & DFS!
-		self.data[_type].set_dist(dist)
-		if _type == "DFS":
+
+		# case both BFS & DFS but not A*!
+		if _type not in ["A_Star_1", "A_Star_2"]:
+			self.data[_type].set_dist(dist)
+
+		if _type in ["DFS", "A_Star_1", "A_Star_2"]:
 			self.data[_type].explore()
 
 
@@ -90,3 +91,6 @@ class Tile:
 			return False
 
 		return self.pos == other.pos
+
+	def __hash__(self):
+		return hash((int(self.pos.x), int(self.pos.y)))

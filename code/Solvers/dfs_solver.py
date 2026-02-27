@@ -38,7 +38,6 @@ class DFS_Solver(Solver):
 				tile.mark_explored(self.type, dist)
 
 				if tile == self.goal:
-					print(f"{'None' if tile.data[self.type].pred is None else tile.data[self.type].pred.data[self.type].dist}")
 					self.on_goal_reach(tile)
 					return
 
@@ -46,6 +45,9 @@ class DFS_Solver(Solver):
 				for n in tile.neighbours:
 					n.mark_edge(self.type, tile)
 					self.stack.append(n)
+
+			else:
+				tile.mark_explored(self.type, tile.data[self.type].dist)
 			return
 
 

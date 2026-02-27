@@ -1,4 +1,6 @@
-﻿class Solver:
+﻿import csv, os
+
+class Solver:
 	"""Virtual/Abstract parent class for solver algorithms."""
 	def __init__(self, game, type: str):
 		game.update.add_listener(self.update)
@@ -20,6 +22,13 @@
 		self.goal = self.game.labyrinth.get_goal()
 		self.running = True
 		self.tile = None
+		self.labsize = int(self.game.labyrinth.size[0]) * int(self.game.labyrinth.size[1])
+		self.csv_save_path = f"Data/runs_{self.labsize}.csv"
+		fields = ["Solver Algorithm", "Labyrinth Dimensions [px*px]", "Solution Depth [units]", "Runtime [s]", "Maze Coverage [%]", "Tile Efficiency [units]", "Max Explored Depth [units]"]
+		if not os.path.exists(self.csv_save_path):
+			with open(self.csv_save_path, 'w') as f:
+				writer = csv.writer(f)
+				writer.writerow(fields)
 
 	def pause(self):
 		"""Freeze the solver at it's current state"""
@@ -56,11 +65,16 @@
 		self.maxDist = -1
 
 	def on_goal_reach(self, goal_tile):
-		print(f"Solver of type {self.type} reached Goal State!\nStats:\n" \
-			f"- {self.frameCount} frames (~{(self.frameCount / 60.0):.3f}s),\n"\
-			f"- {self.tileCount} tiles explored,\n"\
-			f"- Solution depth: {goal_tile.data[self.type].dist},\n"\
-			f"- Maximum explored depth: {self.maxDist}\n--------------------"
-		)
+		dims = f"{int(self.game.labyrinth.size[0])}x{int(self.game.labyrinth.size[1])}"
+		elapsed_time = f"{(self.frameCount / 60.0):.3f}"
+		maze_coverage = f"{(100 * self.tileCount / self.labsize):.2f}%"
+		tile_efficiency = f"{(self.tileCount / goal_tile.data[self.type].dist):.4f}"
+		
+		# algorithm type; labyrinth dimensions; solution depth; runtime; maze coverage; tile efficiency; max depth
+		csv_entry = [self.type, dims, goal_tile.data[self.type].dist, elapsed_time, maze_coverage, tile_efficiency, self.maxDist]
+		with open(self.csv_save_path, 'a', newline='') as f:
+			writer = csv.writer(f)
+			writer.writerow(csv_entry)
+
 		self.exited = True
 		self.tile = goal_tile

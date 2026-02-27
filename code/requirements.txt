@@ -1,3 +1,5 @@
 ﻿pygame
 random
-queue
+math
+csv
+os

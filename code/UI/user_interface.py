@@ -135,7 +135,7 @@ class SolverInterface:
 
 		self.pos = Vector2(125, 360)
 		self.panel = UI_Panel(game, self.pos, Vector2(200, 400), "white")
-		last_y = -185
+		last_y = -195
 		self.header = UI_Text(game=game, text="Solvers:", font_color="black", pos=Vector2(0, last_y) + self.pos)
 		last_y += 15
 		self.activeSolverText = UI_Text(game=game, text=f"Active Solver: {'None' if self.activeSolver is None else self.activeSolver}", font_color="black", pos=Vector2(0, last_y) + self.pos, font_size=18)
@@ -168,10 +168,10 @@ class SolverInterface:
 		self.start_bfs_button = UI_Button(game=game, buttonText="Start DFS", rect=Rect(0, 0, 175, 30), on_press_action=self.start_DFS)
 		self.start_bfs_button.set_position(self.pos + Vector2(0, last_y))
 		last_y += 35
-		self.start_bfs_button = UI_Button(game=game, buttonText="Start A* 1", rect=Rect(0, 0, 175, 30), on_press_action=self.start_Astar_1)
+		self.start_bfs_button = UI_Button(game=game, buttonText="Start A* (Euclidean)", rect=Rect(0, 0, 175, 30), on_press_action=self.start_Astar_1)
 		self.start_bfs_button.set_position(self.pos + Vector2(0, last_y))
 		last_y += 35
-		self.start_bfs_button = UI_Button(game=game, buttonText="Start A* 2", rect=Rect(0, 0, 175, 30), on_press_action=self.start_Astar_2)
+		self.start_bfs_button = UI_Button(game=game, buttonText="Start A* (Manhattan)", rect=Rect(0, 0, 175, 30), on_press_action=self.start_Astar_2)
 		self.start_bfs_button.set_position(self.pos + Vector2(0, last_y))
 		last_y += 35
 		self.start_bfs_button = UI_Button(game=game, buttonText="Start MDP Value Iteration", rect=Rect(0, 0, 175, 30), on_press_action=self.start_MDP_Val)
@@ -199,10 +199,14 @@ class SolverInterface:
 		self.update_active_solver_text_UI()
 
 	def start_Astar_1(self):
-		print("Not implemented!")
+		self.activeSolver = "A_Star_1"
+		self.game.solvers[self.activeSolver].start()
+		self.update_active_solver_text_UI()
 
 	def start_Astar_2(self):
-		print("Not implemented!")
+		self.activeSolver = "A_Star_2"
+		self.game.solvers[self.activeSolver].start()
+		self.update_active_solver_text_UI()
 
 	def start_MDP_Val(self):
 		print("Not implemented!")

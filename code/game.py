@@ -1,4 +1,5 @@
 ﻿import pygame
+from Solvers.astar_solver import A_Star_Solver
 from Solvers.bfs_solver import BFS_Solver
 from Solvers.dfs_solver import DFS_Solver
 from event import Event
@@ -22,7 +23,9 @@ class Game:
 
 		self.solvers = {
 			"BFS": BFS_Solver(self),
-			"DFS": DFS_Solver(self)
+			"DFS": DFS_Solver(self),
+			"A_Star_1": A_Star_Solver(self, euclidean=True),
+			"A_Star_2": A_Star_Solver(self, euclidean=False)
 		}
 
 	def onBeforeUpdate(self):

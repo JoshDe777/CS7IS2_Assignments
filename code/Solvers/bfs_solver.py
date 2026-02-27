@@ -1,6 +1,4 @@
-﻿# external dependencies
-import pygame
-# internal imports
+﻿# internal imports
 from Solvers.solver import Solver
 
 
@@ -28,7 +26,7 @@ class BFS_Solver(Solver):
 			self.frameCount += 1
 
 
-		if not len(self.queue) == 0:
+		if not len(self.queue) == 0 and not self.exited:
 			self.tileCount += 1
 			# take the first item from the priority queue (closest to root node)
 			tile = self.queue.pop(0)
@@ -54,7 +52,9 @@ class BFS_Solver(Solver):
 			return
 
 		# exit w/o success if no more tiles to explore.
-		self.pause()
+
+		if self.tile is None:
+			self.pause()
 
 
 	def reset(self):

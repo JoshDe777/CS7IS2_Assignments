@@ -11,6 +11,7 @@
     <OutputPath>.</OutputPath>
     <Name>code</Name>
     <RootNamespace>code</RootNamespace>
+    <SuppressEnvironmentCreationPrompt>True</SuppressEnvironmentCreationPrompt>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -25,6 +26,7 @@
     <Compile Include="game.py" />
     <Compile Include="Labyrinth\labyrinth_generator.py" />
     <Compile Include="main.py" />
+    <Compile Include="Solvers\astar_solver.py" />
     <Compile Include="Solvers\bfs_solver.py" />
     <Compile Include="Solvers\dfs_solver.py" />
     <Compile Include="Solvers\solver.py" />
