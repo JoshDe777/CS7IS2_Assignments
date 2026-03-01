@@ -132,10 +132,14 @@ class SolverInterface:
 	def __init__(self, game):
 		self.game = game
 		self.activeSolver = None
+		self.mdp_discount = 1.0
+		self.mdp_living_reward = 0.0
+		self.mdp_iters = 100
+		self.mdp_th = 0.01
 
 		self.pos = Vector2(125, 360)
-		self.panel = UI_Panel(game, self.pos, Vector2(200, 400), "white")
-		last_y = -195
+		self.panel = UI_Panel(game, self.pos, Vector2(200, 600), "white")
+		last_y = -285
 		self.header = UI_Text(game=game, text="Solvers:", font_color="black", pos=Vector2(0, last_y) + self.pos)
 		last_y += 15
 		self.activeSolverText = UI_Text(game=game, text=f"Active Solver: {'None' if self.activeSolver is None else self.activeSolver}", font_color="black", pos=Vector2(0, last_y) + self.pos, font_size=18)
@@ -179,6 +183,25 @@ class SolverInterface:
 		last_y += 35
 		self.start_bfs_button = UI_Button(game=game, buttonText="Start MDP Policy Iteration", rect=Rect(0, 0, 175, 30), on_press_action=self.start_MDP_Pol)
 		self.start_bfs_button.set_position(self.pos + Vector2(0, last_y))
+		last_y += 15
+		self.separator2 = UI_Text(game=game, text="---------------------------------------------", font_color="black", pos=Vector2(0, last_y) + self.pos)
+		last_y += 15
+		self.markov_discount = UI_Text(game=game, text=f"MDP Discount Factor = {self.mdp_discount:.2f}", font_color="black", pos=Vector2(0, last_y) + self.pos)
+		last_y += 15
+		self.discount_slider = UI_Slider(game=game, pos=Vector2(0, last_y) + self.pos, width=150, min_val=0.0, max_val=1.0, value=self.mdp_discount, on_slide_callback=self.update_mdp_discount)
+		last_y += 15
+		self.markov_living_reward = UI_Text(game=game, text=f"MDP Living Reward = {self.mdp_living_reward:.2f}", font_color="black", pos=Vector2(0, last_y) + self.pos)
+		last_y += 15
+		self.living_reward_slider = UI_Slider(game=game, pos=Vector2(0, last_y) + self.pos, width=150, min_val=-2.0, max_val=2.0, value=self.mdp_living_reward, on_slide_callback=self.update_mdp_living_reward)
+		last_y += 15
+		self.markov_iters = UI_Text(game=game, text=f"MDP Iterations = {int(self.mdp_iters)}", font_color="black", pos=Vector2(0, last_y) + self.pos)
+		last_y += 15
+		self.living_iter_slider = UI_Slider(game=game, pos=Vector2(0, last_y) + self.pos, width=150, min_val=0, max_val=500, value=int(self.mdp_iters), on_slide_callback=self.update_it_count)
+		last_y += 15
+		self.markov_threshold = UI_Text(game=game, text=f"MDP Delta Threshold = {self.mdp_th:.4f}", font_color="black", pos=Vector2(0, last_y) + self.pos)
+		last_y += 15
+		self.living_th_slider = UI_Slider(game=game, pos=Vector2(0, last_y) + self.pos, width=150, min_val=0.0, max_val=0.2, value=int(self.mdp_th), on_slide_callback=self.update_threshold)
+
 
 	def reset_solver(self):
 		if self.activeSolver is None:
@@ -209,7 +232,9 @@ class SolverInterface:
 		self.update_active_solver_text_UI()
 
 	def start_MDP_Val(self):
-		print("Not implemented!")
+		self.activeSolver = "MDP_Value"
+		self.game.solvers[self.activeSolver].start()
+		self.update_active_solver_text_UI()
 
 	def start_MDP_Pol(self):
 		print("Not implemented!")
@@ -230,3 +255,24 @@ class SolverInterface:
 
 	def update_active_solver_text_UI(self):
 		self.activeSolverText.set_text(f"Active Solver: {'None' if self.activeSolver is None else self.activeSolver}")
+
+	def update_mdp_discount(self, val):
+		self.mdp_discount = val
+		self.game.solvers["MDP_Value"].set_discount(val)
+		self.markov_discount.set_text(f"MDP Discount Factor = {self.mdp_discount:.2f}")
+
+	def update_mdp_living_reward(self, val):
+		self.mdp_living_reward = val
+		self.game.solvers["MDP_Value"].set_living_reward(val)
+		self.markov_living_reward.set_text(f"MDP Living Reward = {self.mdp_living_reward:.2f}")
+
+	def update_it_count(self, val):
+		self.mdp_iters = int(val)
+		self.game.solvers["MDP_Value"].set_max_iters(int(val))
+		self.markov_iters.set_text(f"MDP Iterations = {int(self.mdp_iters)}")
+
+	def update_threshold(self, val):
+		self.mdp_th = val
+		self.game.solvers["MDP_Value"].set_threshold(val)
+		self.markov_threshold.set_text(f"MDP Delta Threshold = {self.mdp_th:.4f}")
+

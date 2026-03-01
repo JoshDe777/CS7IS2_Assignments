@@ -77,4 +77,25 @@ class AStarData(TileData):
 	def reset(self):
 		super().reset()
 		self.score = float("inf")
+
+
+class MarkovValueData(TileData):
+	def __init__(self):
+		super().__init__()
+		self.value = 0.0
+
+	def get_value(self) -> float:
+		return self.value
+
+	def set_value(self, value):
+		self.value = value
+
+	def full_reset(self):
+		# extra reset in case also needs to reset markov values
+		self.reset()
+		self.value = 0.0
+
+
+class MarkovPolicyData(TileData):
+	pass
 		

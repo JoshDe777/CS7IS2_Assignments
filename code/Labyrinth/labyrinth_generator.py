@@ -80,7 +80,7 @@ class Labyrinth:
 		"""Reset all tile data for the maze."""
 		for tile in self.labyrinth:
 			if tile is not None:
-				tile.reset(_type)
+				tile.reset(_type, markov_reset=True)
 
 
 	def get_root(self):

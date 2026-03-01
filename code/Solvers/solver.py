@@ -1,4 +1,4 @@
-﻿import csv, os
+﻿import csv, os, time
 
 class Solver:
 	"""Virtual/Abstract parent class for solver algorithms."""
@@ -22,6 +22,8 @@ class Solver:
 		self.goal = self.game.labyrinth.get_goal()
 		self.running = True
 		self.tile = None
+		
+		self.start_time = time.perf_counter()
 		self.labsize = int(self.game.labyrinth.size[0]) * int(self.game.labyrinth.size[1])
 		self.csv_save_path = f"Data/runs_{self.labsize}.csv"
 		fields = ["Solver Algorithm", "Labyrinth Dimensions [px*px]", "Solution Depth [units]", "Runtime [s]", "Maze Coverage [%]", "Tile Efficiency [units]", "Max Explored Depth [units]"]
@@ -66,9 +68,11 @@ class Solver:
 
 	def on_goal_reach(self, goal_tile):
 		dims = f"{int(self.game.labyrinth.size[0])}x{int(self.game.labyrinth.size[1])}"
-		elapsed_time = f"{(self.frameCount / 60.0):.3f}"
+		self.end_time = time.perf_counter()
+		elapsed_time = f"{(self.end_time - self.start_time):.3f}s"
 		maze_coverage = f"{(100 * self.tileCount / self.labsize):.2f}%"
 		tile_efficiency = f"{(self.tileCount / goal_tile.data[self.type].dist):.4f}"
+
 		
 		# algorithm type; labyrinth dimensions; solution depth; runtime; maze coverage; tile efficiency; max depth
 		csv_entry = [self.type, dims, goal_tile.data[self.type].dist, elapsed_time, maze_coverage, tile_efficiency, self.maxDist]

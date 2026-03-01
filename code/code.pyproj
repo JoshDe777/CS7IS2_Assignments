@@ -29,6 +29,7 @@
     <Compile Include="Solvers\astar_solver.py" />
     <Compile Include="Solvers\bfs_solver.py" />
     <Compile Include="Solvers\dfs_solver.py" />
+    <Compile Include="Solvers\mdp_value_solver.py" />
     <Compile Include="Solvers\solver.py" />
     <Compile Include="Labyrinth\tile.py" />
     <Compile Include="Solvers\tile_data.py" />
