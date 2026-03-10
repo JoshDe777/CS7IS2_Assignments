@@ -2,6 +2,7 @@
 from Solvers.astar_solver import A_Star_Solver
 from Solvers.bfs_solver import BFS_Solver
 from Solvers.dfs_solver import DFS_Solver
+from Solvers.mdp_policy_solver import MDP_Policy
 from Solvers.mdp_value_solver import MDP_Value
 from event import Event
 from Labyrinth.labyrinth_generator import Labyrinth
@@ -27,7 +28,8 @@ class Game:
 			"DFS": DFS_Solver(self),
 			"A_Star_1": A_Star_Solver(self, euclidean=True),
 			"A_Star_2": A_Star_Solver(self, euclidean=False),
-			"MDP_Value": MDP_Value(self)
+			"MDP_Value": MDP_Value(self),
+			"MDP_Policy": MDP_Policy(self)
 		}
 
 	def onBeforeUpdate(self):

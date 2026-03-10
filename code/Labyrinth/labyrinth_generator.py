@@ -23,8 +23,8 @@ def type_to_color(_type: str) -> str:
 	if _type is None:
 		return "white"
 
-	return "green" if _type == "goal" else \
-		"yellow" if _type == "start" else \
+	return "indigo" if _type == "goal" else \
+		"orchid2" if _type == "start" else \
 		"white"
 
 class Labyrinth:

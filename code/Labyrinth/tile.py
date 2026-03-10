@@ -1,12 +1,17 @@
-﻿import pygame
+﻿import pygame, random
 from pygame import Rect, Surface, Vector2, Color
 from pygame.math import clamp
 
-from Solvers.tile_data import AStarData, BFS_Data, DFS_Data, MarkovValueData
+from Solvers.tile_data import AStarData, BFS_Data, DFS_Data, MarkovPolicyData, MarkovValueData
 
 ON_BEST_PATH_COLOR = Color("chartreuse2")
 EXPLORED_COLOR = Color("blue3")
 EDGE_COLOR = Color("cadetblue2")
+
+DOWN_COLOR = Color("burlywood")
+RIGHT_COLOR = Color("cornflowerblue")
+UP_COLOR = Color("darkolivegreen")
+LEFT_COLOR = Color("indianred")
 
 class Tile:
 	tileDim = 45
@@ -23,8 +28,10 @@ class Tile:
 			"DFS": DFS_Data(),
 			"A_Star_1": AStarData(euclidean=True),
 			"A_Star_2": AStarData(euclidean=False),
-			"MDP_Value": MarkovValueData()
+			"MDP_Value": MarkovValueData(),
+			"MDP_Policy": MarkovPolicyData()
 		}
+		
 
 	def AddNeighbour(self, tile):
 		if self == tile:
@@ -41,17 +48,32 @@ class Tile:
 
 		return False
 
+	def SetPolicy(self, n):
+		self.data["MDP_Policy"].set_policy(n)
+		self.set_policy_color()
+
 	def set_scale(new_scale: float):
 		Tile.tileDim = new_scale
 
 	def reset(self, _type: str, markov_reset: bool = False):
 		self.color = self.baseColor
 		self.data[_type].reset()
+		self.data["MDP_Policy"].set_policy(random.choice(self.neighbours))
 
 		if markov_reset and _type in ["MDP_Value", "MDP_Policy"]:
 			self.data[_type].full_reset()
 
-	def set_markov_color(self, _type: str, m_val: float):
+	def set_policy_color(self):
+		policy = self.data["MDP_Policy"].get_policy()
+		p_dir = None if policy is None else policy.pos - self.pos
+		self.color = self.baseColor if policy is None \
+				else UP_COLOR if p_dir == Vector2(0, 1) \
+				else RIGHT_COLOR if p_dir == Vector2(1, 0) \
+				else DOWN_COLOR if p_dir == Vector2(0, -1) \
+				else LEFT_COLOR if p_dir == Vector2(-1, 0) \
+				else "red"
+
+	def set_markov_color(self, m_val: float):
 		# set tile color to red if at maximum negative value, green if positive maximum value. Black if m_val = 0.
 		self.max_tile_val = max(m_val, self.max_tile_val)
 		val_normalized = clamp(m_val / self.max_tile_val, -1, 1)

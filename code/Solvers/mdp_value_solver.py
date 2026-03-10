@@ -1,15 +1,8 @@
-﻿from Solvers.solver import Solver
-from Labyrinth.tile import Tile
+﻿from Solvers.markov_solver import Markov_Solver
 
-class MDP_Value(Solver):
+class MDP_Value(Markov_Solver):
 	def __init__(self, game):
 		super().__init__(game, "MDP_Value")
-		# markov properties
-		self.discount = 0.93
-		self.living_reward = -1
-		self.max_iters = 1000
-		self.goal_reward = 1
-		self.manual_rewards = False
 
 	def set_discount(self, new_discount):
 		self.discount = new_discount
@@ -27,21 +20,13 @@ class MDP_Value(Solver):
 	def set_threshold(self, th):
 		self.delta_threshold = th
 
-	def start(self):
-		super().start()
-
-		# goal tile initialization
-		self.goal_reward = self.goal_reward if self.manual_rewards else self.labsize / self.game.labyrinth.size[0]
-		Tile.max_tile_val = self.goal_reward
-		self.goal.data[self.type].set_value(self.goal_reward)
-		self.delta_threshold = 0.01
-
 	def update(self):
 		if not self.running:
 			return
 
 		if self.exited:
-			self.root.reset(self.type, markov_reset=False)
+			self.root.reset(self.type)
+			self.goal.reset(self.type)
 			self.pause()
 			return
 		else:
@@ -73,11 +58,17 @@ class MDP_Value(Solver):
 
 			val_dict[tile] = max_qval
 
+		total_disparity = 0
 		disparity_exit = True
 		for tile, val in val_dict.items():
-			disparity_exit = disparity_exit and (abs(tile.data[self.type].get_value() - val) < self.delta_threshold)
+			disp = abs(tile.data[self.type].get_value() - val)
+			total_disparity += disp
+
+			disparity_exit = disparity_exit and disp < self.delta_threshold
 			tile.data[self.type].set_value(val)
-			tile.set_markov_color(self.type, val)
+			tile.set_markov_color(val)
+
+		self.disparities.append(f"{(total_disparity / tile_counter):.4f}")
 
 		# exit if average disparity <= threshold.
 		self.tileCount += tile_counter

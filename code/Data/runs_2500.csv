@@ -1,5 +1,0 @@
-Solver Algorithm,Labyrinth Dimensions [px*px],Solution Depth [units],Runtime [s],Maze Coverage [%],Tile Efficiency [units],Max Explored Depth [units]
-BFS,50x50,159,25.683,61.64%,9.6918,159
-DFS,50x50,159,84.433,202.64%,31.8616,322
-A_Star_1,50x50,159,22.100,53.04%,8.3396,159
-A_Star_2,50x50,159,22.367,53.68%,8.4403,159

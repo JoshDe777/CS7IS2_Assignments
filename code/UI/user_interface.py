@@ -33,9 +33,9 @@ class LabyrinthInterface:
 		last_y += 15
 		self.legend_label = UI_Text(game=game, text=f"Color Legend:", font_color="black", pos=Vector2(0, last_y) + self.pos)
 		last_y += 15
-		self.legend1 = UI_Text(game=game, text=f"yellow = start", font_color="black", pos=Vector2(0, last_y) + self.pos)
+		self.legend1 = UI_Text(game=game, text=f"pink = start", font_color="black", pos=Vector2(0, last_y) + self.pos)
 		last_y += 15
-		self.legend2 = UI_Text(game=game, text=f"green = goal", font_color="black", pos=Vector2(0, last_y) + self.pos)
+		self.legend2 = UI_Text(game=game, text=f"purple = goal", font_color="black", pos=Vector2(0, last_y) + self.pos)
 		last_y += 15
 		self.separator2 = UI_Text(game=game, text="---------------------------------------------", font_color="black", pos=Vector2(0, last_y) + self.pos)
 		
@@ -215,29 +215,37 @@ class SolverInterface:
 		self.activeSolver = "BFS"
 		self.game.solvers[self.activeSolver].start()
 		self.update_active_solver_text_UI()
+		self.set_search_legend()
 
 	def start_DFS(self):
 		self.activeSolver = "DFS"
 		self.game.solvers[self.activeSolver].start()
 		self.update_active_solver_text_UI()
+		self.set_search_legend()
 
 	def start_Astar_1(self):
 		self.activeSolver = "A_Star_1"
 		self.game.solvers[self.activeSolver].start()
 		self.update_active_solver_text_UI()
+		self.set_search_legend()
 
 	def start_Astar_2(self):
 		self.activeSolver = "A_Star_2"
 		self.game.solvers[self.activeSolver].start()
 		self.update_active_solver_text_UI()
+		self.set_search_legend()
 
 	def start_MDP_Val(self):
 		self.activeSolver = "MDP_Value"
 		self.game.solvers[self.activeSolver].start()
 		self.update_active_solver_text_UI()
+		self.set_mdp_legend()
 
 	def start_MDP_Pol(self):
-		print("Not implemented!")
+		self.activeSolver = "MDP_Policy"
+		self.game.solvers[self.activeSolver].start()
+		self.update_active_solver_text_UI()
+		self.set_mdp_policy_legend()
 
 	def pause_solver(self):
 		if self.activeSolver is None:
@@ -276,3 +284,14 @@ class SolverInterface:
 		self.game.solvers["MDP_Value"].set_threshold(val)
 		self.markov_threshold.set_text(f"MDP Delta Threshold = {self.mdp_th:.4f}")
 
+	def set_search_legend(self):
+		self.legend1.set_text(f"dark blue = explored")
+		self.legend2.set_text(f"light blue = exploration edge")
+
+	def set_mdp_legend(self):
+		self.legend1.set_text(f"green---------black----------red")
+		self.legend2.set_text(f"+X--------------0------------ -X")
+
+	def set_mdp_policy_legend(self):
+		self.legend1.set_text(f"up: beige <-> down: olive green")
+		self.legend2.set_text(f"left: red <-> right: light blue")

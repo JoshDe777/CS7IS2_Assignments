@@ -96,6 +96,14 @@ class MarkovValueData(TileData):
 		self.value = 0.0
 
 
-class MarkovPolicyData(TileData):
-	pass
+class MarkovPolicyData(MarkovValueData):
+	def __init__(self):
+		super().__init__()
+		self.policy = None
+
+	def set_policy(self, val):
+		self.policy = val
+
+	def get_policy(self):
+		return self.policy
 		
