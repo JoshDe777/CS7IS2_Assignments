@@ -1,6 +1,5 @@
 ﻿from pygame import Vector2, Rect
-from UI.uielement import UI_Button, UI_InputField, UI_Text, UI_Slider, UI_Panel
-from Labyrinth.tile import Tile
+from UI.uielement import UI_Button, UI_InputField, UI_Text, UI_Slider, UI_Panel, UI_Dropdown
 
 # notes to self:
 # - min y-distance to new text element, slider: 15
@@ -9,133 +8,123 @@ from Labyrinth.tile import Tile
 default_scale = 45
 default_width = 10
 default_height = 10
+options = ["Human", "Baseline", "MinMax", "MinMax-AB", "Tabular QRL", "DQN-RL"]
 
-class LabyrinthInterface:
+class TicTacToeInterface:
 	def __init__(self, game):
 		self.game = game
-		game.afterUpdate.add_listener(self.update_seed_text)
+		game.ttt.on_game_end.add_listener(self.display_winner)
+		game.ttt.on_turn_change.add_listener(self.update_game_state)
 		self.current_scale = default_scale
-		self.current_width = default_width
-		self.current_height = default_height
-		self.labyrinth_seed = game.labyrinth.get_seed()
 
 		self.pos = Vector2(1155, 360)
 		self.panel = UI_Panel(game, self.pos, Vector2(200, 400), "white")
 		last_y = -185
-		self.header = UI_Text(game=game, text="Joshua's Labyrinth", font_color="black", pos=Vector2(0, last_y) + self.pos)
+		self.header = UI_Text(game=game, text="Tic Tac Toe!", font_color="black", pos=Vector2(0, last_y) + self.pos)
 		last_y += 15
-		self.seed_text = UI_Text(game=game, text=f"seed: {self.labyrinth_seed}", font_color="black", pos=Vector2(0, last_y) + self.pos, font_size=15)
-		last_y += 30
-		self.seed_input = UI_InputField(game=game, pos=Vector2(0, last_y) + self.pos, size=Vector2(175, 25), on_submit=self.regen_maze_seeded, initial_text=str(self.labyrinth_seed))
-		last_y += 15
+		self.game_state = UI_Text(game=game, text=f"Waiting for game start!", font_color="black", pos=Vector2(0, last_y) + self.pos, font_size=15)
+		last_y += 40
+		self.start_button = UI_Button(game=game, buttonText="Start Game!", rect=Rect(0, 0, 175, 50), on_press_action=self.start_game)
+		self.start_button.set_position(self.pos + Vector2(0, last_y))
+		last_y += 20
 		self.separator1 = UI_Text(game=game, text="---------------------------------------------", font_color="black", pos=Vector2(0, last_y) + self.pos)
 
+		# player 1 type selector
 		last_y += 15
-		self.legend_label = UI_Text(game=game, text=f"Color Legend:", font_color="black", pos=Vector2(0, last_y) + self.pos)
-		last_y += 15
-		self.legend1 = UI_Text(game=game, text=f"pink = start", font_color="black", pos=Vector2(0, last_y) + self.pos)
-		last_y += 15
-		self.legend2 = UI_Text(game=game, text=f"purple = goal", font_color="black", pos=Vector2(0, last_y) + self.pos)
-		last_y += 15
+		self.p1_text = UI_Text(game=game, text=f"Player 1:", font_color="black", pos=Vector2(0, last_y) + self.pos, font_size=15)
+		self.p1_symbol = UI_Text(game=game, text="o", font_color="blue", pos = Vector2(90, last_y) + self.pos, font_size=20)
+		last_y += 40
+		self.p1_input = UI_Dropdown(game=game, pos=Vector2(0, last_y) + self.pos, size=Vector2(175, 50), options=options, on_select=self.update_p1_agent_type)
+		last_y += 20
 		self.separator2 = UI_Text(game=game, text="---------------------------------------------", font_color="black", pos=Vector2(0, last_y) + self.pos)
-		
-		# labyrinth scale slider
+
+		# player 2 type selector
 		last_y += 15
-		self.scale_desc = UI_Text(game=game, text=f"labyrinth scale : {self.current_scale}%", font_color="black", pos=Vector2(0, last_y) + self.pos)
-		last_y += 15
-		self.scale_slider = UI_Slider(game=game, pos=Vector2(0, last_y) + self.pos, width=150, min_val=5, max_val=100, value=self.current_scale, on_slide_callback=self.adjust_scale)
-		last_y += 15
+		self.p2_text = UI_Text(game=game, text=f"Player 2:", font_color="black", pos=Vector2(0, last_y) + self.pos, font_size=15)
+		self.p2_symbol = UI_Text(game=game, text="x", font_color="red", pos = Vector2(90, last_y) + self.pos, font_size=20)
+		last_y += 40
+		self.p2_input = UI_Dropdown(game=game, pos=Vector2(0, last_y) + self.pos, size=Vector2(175, 50), options=options, on_select=self.update_p2_agent_type)
+		last_y += 20
 		self.separator3 = UI_Text(game=game, text="---------------------------------------------", font_color="black", pos=Vector2(0, last_y) + self.pos)
-		
-		# button: regenerate maze
+
+		# transition to connect 4
 		last_y += 40
-		self.regen_button = UI_Button(game=game, buttonText="Generate Random Maze", rect=Rect(0, 0, 175, 50), on_press_action=self.regen_maze)
-		self.regen_button.set_position(self.pos + Vector2(0, last_y))
-		last_y += 25
-		self.separator4 = UI_Text(game=game, text="---------------------------------------------", font_color="black", pos=Vector2(0, last_y) + self.pos)
+		self.c4_button = UI_Button(game=game, buttonText="Play Connect 4", rect=Rect(0, 0, 175, 50), on_press_action=self.move_to_c4)
+		self.c4_button.set_position(self.pos + Vector2(0, last_y))
 
-		# input fields: maze size
-		last_y += 15
-		self.scale_setter_text = UI_Text(game=game, text="Maze Dimensions:", font_color="black", pos=Vector2(0, last_y) + self.pos)
-		last_y += 15
-		self.scale_setter_text2 = UI_Text(game=game, text="(changes automatically make a new maze!)", font_color="black", pos=Vector2(0, last_y) + self.pos, font_size=14)
-		last_y += 25
-		self.scale_x_text = UI_Text(game=game, text=f"width={self.current_width}", font_color="black", pos=Vector2(0, last_y) + self.pos)
-		last_y += 15
-		self.x_slider = UI_Slider(game=game, pos=Vector2(0, last_y) + self.pos, width=150, min_val=2, max_val=50, value=self.current_width, on_slide_callback=self.adjust_width, on_release_callback=self.regen_maze_discard)
-		last_y += 15
-		self.scale_y_text = UI_Text(game=game, text=f"height={self.current_height}", font_color="black", pos=Vector2(0, last_y) + self.pos)
-		last_y += 15
-		self.y_slider = UI_Slider(game=game, pos=Vector2(0, last_y) + self.pos, width=150, min_val=2, max_val=50, value=self.current_height, on_slide_callback=self.adjust_height, on_release_callback=self.regen_maze_discard)
+	def start_game(self):
+		if not self.game.ttt.running:
+			print("Starting game!")
+			self.game.ttt.start()
 
-		# preset buttons for largest and 10x10 (default) maze
-		last_y += 40
-		self.ten_scale_button = UI_Button(game=game, buttonText="10x10 Scale", rect=Rect(0, 0, 75, 25), on_press_action=self.preset_10_10)
-		self.ten_scale_button.set_position(self.pos + Vector2(-50, last_y))
-		self.fifty_scale_button = UI_Button(game=game, buttonText="50x50 Scale", rect=Rect(0, 0, 75, 25), on_press_action=self.preset_50_50)
-		self.fifty_scale_button.set_position(self.pos + Vector2(50, last_y))
+	def update_game_state(self, activePlayer: str):
+		self.game_state.set_text(f"{activePlayer}'s turn!")
 
+	def display_winner(self, winner):
+		text = ""
+		if winner == "Draw":
+			text = "No winner!"
+		else:
+			text = f"{winner} wins!"
+		self.game_state.set_text(text)
 
-	def update_seed_text(self, _, __):
-		self.labyrinth_seed = self.game.labyrinth.get_seed()
-		self.seed_text.set_text(f"seed: {self.labyrinth_seed}")
-
-	def regen_maze(self):
-		self.game.labyrinth.set_seed()
-		self.game.labyrinth.regenerate()
-		self.labyrinth_seed = self.game.labyrinth.get_seed()
-		self.seed_input.set_text(str(self.labyrinth_seed))
-
-	def regen_maze_seeded(self, seed):
-		self.game.labyrinth.set_seed(seed)
-		self.game.labyrinth.regenerate()
-
-	def regen_maze_discard(self, _):
-		self.game.labyrinth.regenerate()
-
-	def adjust_scale(self, new_scale):
-		Tile.set_scale(new_scale)
-		self.current_scale = new_scale
-		self.scale_desc.set_text(f"labyrinth scale : {self.current_scale:.2f}%")
-
-	def adjust_width(self, new_width):
-		if self.current_width == int(new_width):
+	def update_p1_agent_type(self, _, agent_type):
+		if self.game.ttt.running:
+			print("Can't change agent type whilst playing!")
 			return
 
-		self.current_width = int(new_width)
-		self.game.labyrinth.set_size(new_width, None)
-		self.scale_x_text.set_text(f"width={self.current_width}")
+		print(f"Active p1 agent type: {agent_type} (Not implemented unless Human).")
+		# self.game.set_ttt_agent(1, agent_type)
 
-	def adjust_height(self, new_height):
-		if self.current_height == int(new_height):
+	def update_p2_agent_type(self, _, agent_type):
+		if self.game.ttt.running:
+			print("Can't change agent type whilst playing!")
 			return
 
-		self.current_height = int(new_height)
-		self.game.labyrinth.set_size(None, new_height)
-		self.scale_y_text.set_text(f"height={self.current_height}")
+		print(f"Active p2 agent type: {agent_type} (Not implemented unless Human).")
+		# self.game.set_ttt_agent(2, agent_type)
 
-	def preset_50_50(self):
-		new_scale = 14.0
-		Tile.set_scale(new_scale)
-		self.current_scale = new_scale
-		self.scale_desc.set_text(f"labyrinth scale : {self.current_scale:.2f}%")
-		self.scale_slider.set_value(new_scale)
+	def move_to_c4(self):
+		self.game.close_TTT()
+		self.game.open_c4()
 
-	def preset_10_10(self):
-		new_scale = 70.0
-		Tile.set_scale(new_scale)
-		self.current_scale = new_scale
-		self.scale_desc.set_text(f"labyrinth scale : {self.current_scale:.2f}%")
-		self.scale_slider.set_value(new_scale)
+	def enable(self):
+		self.panel.enable()
+		self.header.enable()
+		self.game_state.enable()
+		self.start_button.enable()
+		self.separator1.enable()
+		self.p1_text.enable()
+		self.p1_symbol.enable()
+		self.p1_input.enable()
+		self.separator2.enable()
+		self.p2_text.enable()
+		self.p2_symbol.enable()
+		self.p2_input.enable()
+		self.separator3.enable()
+		self.c4_button.enable()
 
-class SolverInterface:
+	def disable(self):
+		self.panel.disable()
+		self.header.disable()
+		self.game_state.disable()
+		self.start_button.disable()
+		self.separator1.disable()
+		self.p1_text.disable()
+		self.p1_symbol.disable()
+		self.p1_input.disable()
+		self.separator2.disable()
+		self.p2_text.disable()
+		self.p2_symbol.disable()
+		self.p2_input.disable()
+		self.separator3.disable()
+		self.c4_button.disable()
+
+
+# TODO before testing C4!
+class Connect4Interface:
 	def __init__(self, game):
 		self.game = game
-		self.activeSolver = None
-		self.mdp_discount = 1.0
-		self.mdp_living_reward = 0.0
-		self.mdp_iters = 100
-		self.mdp_th = 0.01
 
 		self.pos = Vector2(125, 360)
 		self.panel = UI_Panel(game, self.pos, Vector2(200, 600), "white")

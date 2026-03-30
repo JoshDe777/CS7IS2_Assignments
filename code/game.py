@@ -1,36 +1,40 @@
 ﻿import pygame
-from Solvers.astar_solver import A_Star_Solver
-from Solvers.bfs_solver import BFS_Solver
-from Solvers.dfs_solver import DFS_Solver
-from Solvers.mdp_policy_solver import MDP_Policy
-from Solvers.mdp_value_solver import MDP_Value
+from C4.connect4 import Connect4
+from C4.c4player import C4_Player
+from TTT.tictactoe import TicTacToe
+from TTT.tttplayer import TTT_Player
+from UI.user_interface import Connect4Interface, TicTacToeInterface
 from event import Event
-from Labyrinth.labyrinth_generator import Labyrinth
-from UI.user_interface import LabyrinthInterface, SolverInterface
 
 class Game:
-	def __init__(self, name: str, display_size: tuple, labyrinth_size: pygame.Vector2, labyrinth_seed: int):
+	def __init__(self, name: str, display_size: tuple):
 		self.name = name
 		self.running = True
 		self.deltaTime = 0.0
 		self.size = display_size
 		pygame.font.init()
 		self.worldToScreen = pygame.Vector2(display_size[0] / 2, display_size[1] / 2)
-		self.labyrinth_size = labyrinth_size
-		self.labyrinth_seed = labyrinth_seed
 		self.update = Event()
 		self.beforeUpdate = Event()
 		self.afterUpdate = Event()
+		self.postDraw = Event()
 		self.eventPoller = Event()
 
-		self.solvers = {
-			"BFS": BFS_Solver(self),
-			"DFS": DFS_Solver(self),
-			"A_Star_1": A_Star_Solver(self, euclidean=True),
-			"A_Star_2": A_Star_Solver(self, euclidean=False),
-			"MDP_Value": MDP_Value(self),
-			"MDP_Policy": MDP_Policy(self)
-		}
+		# A3 exclusive
+		self.active_game = None
+
+		# Tic Tac Toe
+		self.ttt_p1 = TTT_Player(self)
+		self.ttt_p2 = TTT_Player(self)
+		self.ttt = TicTacToe(self, self.worldToScreen, self.ttt_p1, self.ttt_p2)
+		self.ttt_ui = TicTacToeInterface(game=self)
+
+		# Connect 4
+		self.c4_p1 = C4_Player(self)
+		self.c4_p2 = C4_Player(self)
+		self.c4 = Connect4(self, self.worldToScreen, self.c4_p1, self.c4_p2)
+		self.c4_ui = Connect4Interface(game=self)
+		
 
 	def onBeforeUpdate(self):
 		events = pygame.event.get()
@@ -46,6 +50,7 @@ class Game:
 
 	def draw(self):
 		self.afterUpdate.invoke(self.window, self.worldToScreen)
+		self.postDraw.invoke(self.window, self.worldToScreen)
 		pygame.display.flip()
 
 	def onShutdown(self):
@@ -57,9 +62,7 @@ class Game:
 		pygame.init()
 		self.window = pygame.display.set_mode(self.size)
 		self.clock = pygame.time.Clock()
-		self.labyrinth = Labyrinth(size=self.labyrinth_size, game=self, worldOffset=pygame.Vector2(0, 0), seed=self.labyrinth_seed)
-		self.ui = LabyrinthInterface(self)
-		self.solver_ui = SolverInterface(self)
+		self.open_TTT()
 
 		while self.running:
 			self.onBeforeUpdate()
@@ -72,3 +75,26 @@ class Game:
 			self.deltaTime = self.clock.tick(60) / 1000
 
 		self.onShutdown()
+
+	# A3 exclusive
+	def open_TTT(self):
+		self.active_game = self.ttt
+		self.ttt.enable()
+		self.ttt_ui.enable()
+
+	def close_TTT(self):
+		if self.active_game == self.ttt:
+			self.active_game = None
+		self.ttt.disable()
+		self.ttt_ui.disable()
+
+	def open_c4(self):
+		self.active_game = self.c4
+		self.c4.enable()
+		self.c4_ui.enable()
+
+	def close_c4(self):
+		if self.active_game == self.c4:
+			self.active_game = None
+		self.c4.disable()
+		self.c4_ui.disable()

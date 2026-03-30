@@ -3,36 +3,32 @@
   "WorkspaceRootPath": "C:\\repositories\\uni\\CS7IS2_Assignments\\code\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{62FD947B-280D-4E7B-B031-ACAB5B9434C1}|code.pyproj|C:\\repositories\\uni\\CS7IS2_Assignments\\code\\Solvers\\markov_solver.py||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{62FD947B-280D-4E7B-B031-ACAB5B9434C1}|code.pyproj|solutionrelative:Solvers\\markov_solver.py||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{62FD947B-280D-4E7B-B031-ACAB5B9434C1}|code.pyproj|C:\\repositories\\uni\\CS7IS2_Assignments\\code\\Solvers\\mdp_value_solver.py||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{62FD947B-280D-4E7B-B031-ACAB5B9434C1}|code.pyproj|solutionrelative:Solvers\\mdp_value_solver.py||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{62FD947B-280D-4E7B-B031-ACAB5B9434C1}|code.pyproj|C:\\repositories\\uni\\CS7IS2_Assignments\\code\\Solvers\\mdp_policy_solver.py||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{62FD947B-280D-4E7B-B031-ACAB5B9434C1}|code.pyproj|solutionrelative:Solvers\\mdp_policy_solver.py||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{62FD947B-280D-4E7B-B031-ACAB5B9434C1}|code.pyproj|C:\\repositories\\uni\\CS7IS2_Assignments\\code\\Labyrinth\\tile.py||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{62FD947B-280D-4E7B-B031-ACAB5B9434C1}|code.pyproj|solutionrelative:Labyrinth\\tile.py||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{62FD947B-280D-4E7B-B031-ACAB5B9434C1}|code.pyproj|C:\\repositories\\uni\\CS7IS2_Assignments\\code\\Solvers\\tile_data.py||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{62FD947B-280D-4E7B-B031-ACAB5B9434C1}|code.pyproj|solutionrelative:Solvers\\tile_data.py||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{62FD947B-280D-4E7B-B031-ACAB5B9434C1}|code.pyproj|C:\\repositories\\uni\\CS7IS2_Assignments\\code\\Solvers\\solver.py||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{62FD947B-280D-4E7B-B031-ACAB5B9434C1}|code.pyproj|solutionrelative:Solvers\\solver.py||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{62FD947B-280D-4E7B-B031-ACAB5B9434C1}|code.pyproj|C:\\repositories\\uni\\CS7IS2_Assignments\\code\\UI\\user_interface.py||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{62FD947B-280D-4E7B-B031-ACAB5B9434C1}|code.pyproj|solutionrelative:UI\\user_interface.py||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{62FD947B-280D-4E7B-B031-ACAB5B9434C1}|code.pyproj|C:\\repositories\\uni\\CS7IS2_Assignments\\code\\game.py||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{62FD947B-280D-4E7B-B031-ACAB5B9434C1}|code.pyproj|solutionrelative:game.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62FD947B-280D-4E7B-B031-ACAB5B9434C1}|code.pyproj|C:\\repositories\\uni\\CS7IS2_Assignments\\code\\TTT\\tttplayer.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{62FD947B-280D-4E7B-B031-ACAB5B9434C1}|code.pyproj|solutionrelative:TTT\\tttplayer.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62FD947B-280D-4E7B-B031-ACAB5B9434C1}|code.pyproj|C:\\repositories\\uni\\CS7IS2_Assignments\\code\\C4\\connect4.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{62FD947B-280D-4E7B-B031-ACAB5B9434C1}|code.pyproj|solutionrelative:C4\\connect4.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62FD947B-280D-4E7B-B031-ACAB5B9434C1}|code.pyproj|C:\\repositories\\uni\\CS7IS2_Assignments\\code\\C4\\c4player.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{62FD947B-280D-4E7B-B031-ACAB5B9434C1}|code.pyproj|solutionrelative:C4\\c4player.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62FD947B-280D-4E7B-B031-ACAB5B9434C1}|code.pyproj|C:\\repositories\\uni\\CS7IS2_Assignments\\code\\TTT\\tictactoe.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{62FD947B-280D-4E7B-B031-ACAB5B9434C1}|code.pyproj|solutionrelative:TTT\\tictactoe.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62FD947B-280D-4E7B-B031-ACAB5B9434C1}|code.pyproj|C:\\repositories\\uni\\CS7IS2_Assignments\\code\\main.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{62FD947B-280D-4E7B-B031-ACAB5B9434C1}|code.pyproj|solutionrelative:main.py||{8B382828-6202-11D1-8870-0000F87579D2}"
     }
   ],
   "DocumentGroupContainers": [
@@ -41,117 +37,104 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 936,
-          "SelectedChildIndex": 3,
+          "DockedWidth": 1042,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "solver.py",
-              "DocumentMoniker": "C:\\repositories\\uni\\CS7IS2_Assignments\\code\\Solvers\\solver.py",
-              "RelativeDocumentMoniker": "Solvers\\solver.py",
-              "ToolTip": "C:\\repositories\\uni\\CS7IS2_Assignments\\code\\Solvers\\solver.py",
-              "RelativeToolTip": "Solvers\\solver.py",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 4,
+              "Title": "c4player.py",
+              "DocumentMoniker": "C:\\repositories\\uni\\CS7IS2_Assignments\\code\\C4\\c4player.py",
+              "RelativeDocumentMoniker": "C4\\c4player.py",
+              "ToolTip": "C:\\repositories\\uni\\CS7IS2_Assignments\\code\\C4\\c4player.py",
+              "RelativeToolTip": "C4\\c4player.py",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAATAAAAAAAAAA==",
               "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHfSURBVDhPpZCxaxNhGMZ/9zVJaUuDUlq1FBWLZBFTCXo4BFyU1qGKi4OkIHhkzF/g0KF00M2lR9YUdDDQQVAcJILoQUd1UNRmkhoRm8RL777v7nOoCZd4AcEH3uF5nvd73vd74X\u002BgtTai3LIsHeWDEEJct217a1DvwbIs7bpubFUqFW3b9naxWLwWfSOipAvHcfqqi0KhkMtms3cty1rsaomeG4FpmoMSANVqlXQ6nQMWgacMC4hOBchduEj\u002ByjKjScGh8SS1Wq3nxQZEN3j1eY/Vrfe8rTeQvsf89ARLS1cz5XIZ/uUGXxptQiVRUhJIybudXaZn52a7vbEBpmkyNb/A69YM9W8tDEJOTI2hpI\u002BSkvOZH2f13sNAB\u002B07sV9wHIdH9Unquz9RvoeUPtL3UFISKkky\u002BAT7HwTi6FpsgGma3N9\u002Bg5I\u002BKaFZyU8wOpJChwHnjiuE9wKCXyC/zsQGOI7DeELjtiUPbgky6Wd/HA3KBelC4AIpNfQGl88cQ0mfI5PugRhKkM2DUk0INYwtPI/dAGAlf4rbl06T6DyBVgeCABJzYPhwcm0V8ICNvwJKpVIf37h3IxSyKVAuBMDIYQAMw1jvaxwGrYNl3Xq5o79vat3Y3Nedj4\u002B11je7/m\u002BXOuyzFtDhUgAAAABJRU5ErkJggg==",
-              "WhenOpened": "2026-03-01T19:47:51.855Z",
+              "WhenOpened": "2026-03-30T22:24:50.478Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "mdp_value_solver.py",
-              "DocumentMoniker": "C:\\repositories\\uni\\CS7IS2_Assignments\\code\\Solvers\\mdp_value_solver.py",
-              "RelativeDocumentMoniker": "Solvers\\mdp_value_solver.py",
-              "ToolTip": "C:\\repositories\\uni\\CS7IS2_Assignments\\code\\Solvers\\mdp_value_solver.py",
-              "RelativeToolTip": "Solvers\\mdp_value_solver.py",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEQAAAAZAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "connect4.py",
+              "DocumentMoniker": "C:\\repositories\\uni\\CS7IS2_Assignments\\code\\C4\\connect4.py",
+              "RelativeDocumentMoniker": "C4\\connect4.py",
+              "ToolTip": "C:\\repositories\\uni\\CS7IS2_Assignments\\code\\C4\\connect4.py",
+              "RelativeToolTip": "C4\\connect4.py",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEkAAAAAAAAAAAAAAA==",
               "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHfSURBVDhPpZCxaxNhGMZ/9zVJaUuDUlq1FBWLZBFTCXo4BFyU1qGKi4OkIHhkzF/g0KF00M2lR9YUdDDQQVAcJILoQUd1UNRmkhoRm8RL777v7nOoCZd4AcEH3uF5nvd73vd74X\u002BgtTai3LIsHeWDEEJct217a1DvwbIs7bpubFUqFW3b9naxWLwWfSOipAvHcfqqi0KhkMtms3cty1rsaomeG4FpmoMSANVqlXQ6nQMWgacMC4hOBchduEj\u002ByjKjScGh8SS1Wq3nxQZEN3j1eY/Vrfe8rTeQvsf89ARLS1cz5XIZ/uUGXxptQiVRUhJIybudXaZn52a7vbEBpmkyNb/A69YM9W8tDEJOTI2hpI\u002BSkvOZH2f13sNAB\u002B07sV9wHIdH9Unquz9RvoeUPtL3UFISKkky\u002BAT7HwTi6FpsgGma3N9\u002Bg5I\u002BKaFZyU8wOpJChwHnjiuE9wKCXyC/zsQGOI7DeELjtiUPbgky6Wd/HA3KBelC4AIpNfQGl88cQ0mfI5PugRhKkM2DUk0INYwtPI/dAGAlf4rbl06T6DyBVgeCABJzYPhwcm0V8ICNvwJKpVIf37h3IxSyKVAuBMDIYQAMw1jvaxwGrYNl3Xq5o79vat3Y3Nedj4\u002B11je7/m\u002BXOuyzFtDhUgAAAABJRU5ErkJggg==",
-              "WhenOpened": "2026-03-01T19:47:35.667Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "mdp_policy_solver.py",
-              "DocumentMoniker": "C:\\repositories\\uni\\CS7IS2_Assignments\\code\\Solvers\\mdp_policy_solver.py",
-              "RelativeDocumentMoniker": "Solvers\\mdp_policy_solver.py",
-              "ToolTip": "C:\\repositories\\uni\\CS7IS2_Assignments\\code\\Solvers\\mdp_policy_solver.py",
-              "RelativeToolTip": "Solvers\\mdp_policy_solver.py",
-              "ViewState": "AgIAADgAAAAAAAAAAAAswFUAAAAAAAAAAAAAAA==",
-              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHfSURBVDhPpZCxaxNhGMZ/9zVJaUuDUlq1FBWLZBFTCXo4BFyU1qGKi4OkIHhkzF/g0KF00M2lR9YUdDDQQVAcJILoQUd1UNRmkhoRm8RL777v7nOoCZd4AcEH3uF5nvd73vd74X\u002BgtTai3LIsHeWDEEJct217a1DvwbIs7bpubFUqFW3b9naxWLwWfSOipAvHcfqqi0KhkMtms3cty1rsaomeG4FpmoMSANVqlXQ6nQMWgacMC4hOBchduEj\u002ByjKjScGh8SS1Wq3nxQZEN3j1eY/Vrfe8rTeQvsf89ARLS1cz5XIZ/uUGXxptQiVRUhJIybudXaZn52a7vbEBpmkyNb/A69YM9W8tDEJOTI2hpI\u002BSkvOZH2f13sNAB\u002B07sV9wHIdH9Unquz9RvoeUPtL3UFISKkky\u002BAT7HwTi6FpsgGma3N9\u002Bg5I\u002BKaFZyU8wOpJChwHnjiuE9wKCXyC/zsQGOI7DeELjtiUPbgky6Wd/HA3KBelC4AIpNfQGl88cQ0mfI5PugRhKkM2DUk0INYwtPI/dAGAlf4rbl06T6DyBVgeCABJzYPhwcm0V8ICNvwJKpVIf37h3IxSyKVAuBMDIYQAMw1jvaxwGrYNl3Xq5o79vat3Y3Nedj4\u002B11je7/m\u002BXOuyzFtDhUgAAAABJRU5ErkJggg==",
-              "WhenOpened": "2026-03-01T19:14:22.375Z",
+              "WhenOpened": "2026-03-30T21:23:46.015Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "markov_solver.py",
-              "DocumentMoniker": "C:\\repositories\\uni\\CS7IS2_Assignments\\code\\Solvers\\markov_solver.py",
-              "RelativeDocumentMoniker": "Solvers\\markov_solver.py",
-              "ToolTip": "C:\\repositories\\uni\\CS7IS2_Assignments\\code\\Solvers\\markov_solver.py",
-              "RelativeToolTip": "Solvers\\markov_solver.py",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAMAAAAAAAAAA==",
-              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHfSURBVDhPpZCxaxNhGMZ/9zVJaUuDUlq1FBWLZBFTCXo4BFyU1qGKi4OkIHhkzF/g0KF00M2lR9YUdDDQQVAcJILoQUd1UNRmkhoRm8RL777v7nOoCZd4AcEH3uF5nvd73vd74X\u002BgtTai3LIsHeWDEEJct217a1DvwbIs7bpubFUqFW3b9naxWLwWfSOipAvHcfqqi0KhkMtms3cty1rsaomeG4FpmoMSANVqlXQ6nQMWgacMC4hOBchduEj\u002ByjKjScGh8SS1Wq3nxQZEN3j1eY/Vrfe8rTeQvsf89ARLS1cz5XIZ/uUGXxptQiVRUhJIybudXaZn52a7vbEBpmkyNb/A69YM9W8tDEJOTI2hpI\u002BSkvOZH2f13sNAB\u002B07sV9wHIdH9Unquz9RvoeUPtL3UFISKkky\u002BAT7HwTi6FpsgGma3N9\u002Bg5I\u002BKaFZyU8wOpJChwHnjiuE9wKCXyC/zsQGOI7DeELjtiUPbgky6Wd/HA3KBelC4AIpNfQGl88cQ0mfI5PugRhKkM2DUk0INYwtPI/dAGAlf4rbl06T6DyBVgeCABJzYPhwcm0V8ICNvwJKpVIf37h3IxSyKVAuBMDIYQAMw1jvaxwGrYNl3Xq5o79vat3Y3Nedj4\u002B11je7/m\u002BXOuyzFtDhUgAAAABJRU5ErkJggg==",
-              "WhenOpened": "2026-03-01T18:36:37.751Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
               "Title": "user_interface.py",
               "DocumentMoniker": "C:\\repositories\\uni\\CS7IS2_Assignments\\code\\UI\\user_interface.py",
               "RelativeDocumentMoniker": "UI\\user_interface.py",
               "ToolTip": "C:\\repositories\\uni\\CS7IS2_Assignments\\code\\UI\\user_interface.py",
               "RelativeToolTip": "UI\\user_interface.py",
-              "ViewState": "AgIAANMAAAAAAAAAAAAAACkBAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAADAAAAAAAAAAAADwv3sAAAAZAAAAAAAAAA==",
               "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHfSURBVDhPpZCxaxNhGMZ/9zVJaUuDUlq1FBWLZBFTCXo4BFyU1qGKi4OkIHhkzF/g0KF00M2lR9YUdDDQQVAcJILoQUd1UNRmkhoRm8RL777v7nOoCZd4AcEH3uF5nvd73vd74X\u002BgtTai3LIsHeWDEEJct217a1DvwbIs7bpubFUqFW3b9naxWLwWfSOipAvHcfqqi0KhkMtms3cty1rsaomeG4FpmoMSANVqlXQ6nQMWgacMC4hOBchduEj\u002ByjKjScGh8SS1Wq3nxQZEN3j1eY/Vrfe8rTeQvsf89ARLS1cz5XIZ/uUGXxptQiVRUhJIybudXaZn52a7vbEBpmkyNb/A69YM9W8tDEJOTI2hpI\u002BSkvOZH2f13sNAB\u002B07sV9wHIdH9Unquz9RvoeUPtL3UFISKkky\u002BAT7HwTi6FpsgGma3N9\u002Bg5I\u002BKaFZyU8wOpJChwHnjiuE9wKCXyC/zsQGOI7DeELjtiUPbgky6Wd/HA3KBelC4AIpNfQGl88cQ0mfI5PugRhKkM2DUk0INYwtPI/dAGAlf4rbl06T6DyBVgeCABJzYPhwcm0V8ICNvwJKpVIf37h3IxSyKVAuBMDIYQAMw1jvaxwGrYNl3Xq5o79vat3Y3Nedj4\u002B11je7/m\u002BXOuyzFtDhUgAAAABJRU5ErkJggg==",
-              "WhenOpened": "2026-03-01T16:38:26.896Z",
+              "WhenOpened": "2026-03-30T20:32:40.063Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 1,
               "Title": "game.py",
               "DocumentMoniker": "C:\\repositories\\uni\\CS7IS2_Assignments\\code\\game.py",
               "RelativeDocumentMoniker": "game.py",
               "ToolTip": "C:\\repositories\\uni\\CS7IS2_Assignments\\code\\game.py",
               "RelativeToolTip": "game.py",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAAAB8AAAAhAAAAAAAAAA==",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAAAF8AAAAUAAAAAAAAAA==",
               "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHfSURBVDhPpZCxaxNhGMZ/9zVJaUuDUlq1FBWLZBFTCXo4BFyU1qGKi4OkIHhkzF/g0KF00M2lR9YUdDDQQVAcJILoQUd1UNRmkhoRm8RL777v7nOoCZd4AcEH3uF5nvd73vd74X\u002BgtTai3LIsHeWDEEJct217a1DvwbIs7bpubFUqFW3b9naxWLwWfSOipAvHcfqqi0KhkMtms3cty1rsaomeG4FpmoMSANVqlXQ6nQMWgacMC4hOBchduEj\u002ByjKjScGh8SS1Wq3nxQZEN3j1eY/Vrfe8rTeQvsf89ARLS1cz5XIZ/uUGXxptQiVRUhJIybudXaZn52a7vbEBpmkyNb/A69YM9W8tDEJOTI2hpI\u002BSkvOZH2f13sNAB\u002B07sV9wHIdH9Unquz9RvoeUPtL3UFISKkky\u002BAT7HwTi6FpsgGma3N9\u002Bg5I\u002BKaFZyU8wOpJChwHnjiuE9wKCXyC/zsQGOI7DeELjtiUPbgky6Wd/HA3KBelC4AIpNfQGl88cQ0mfI5PugRhKkM2DUk0INYwtPI/dAGAlf4rbl06T6DyBVgeCABJzYPhwcm0V8ICNvwJKpVIf37h3IxSyKVAuBMDIYQAMw1jvaxwGrYNl3Xq5o79vat3Y3Nedj4\u002B11je7/m\u002BXOuyzFtDhUgAAAABJRU5ErkJggg==",
               "WhenOpened": "2026-02-27T13:26:17.376Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "main.py",
+              "DocumentMoniker": "C:\\repositories\\uni\\CS7IS2_Assignments\\code\\main.py",
+              "RelativeDocumentMoniker": "main.py",
+              "ToolTip": "C:\\repositories\\uni\\CS7IS2_Assignments\\code\\main.py",
+              "RelativeToolTip": "main.py",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAaAAAAAAAAAA==",
+              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHfSURBVDhPpZCxaxNhGMZ/9zVJaUuDUlq1FBWLZBFTCXo4BFyU1qGKi4OkIHhkzF/g0KF00M2lR9YUdDDQQVAcJILoQUd1UNRmkhoRm8RL777v7nOoCZd4AcEH3uF5nvd73vd74X\u002BgtTai3LIsHeWDEEJct217a1DvwbIs7bpubFUqFW3b9naxWLwWfSOipAvHcfqqi0KhkMtms3cty1rsaomeG4FpmoMSANVqlXQ6nQMWgacMC4hOBchduEj\u002ByjKjScGh8SS1Wq3nxQZEN3j1eY/Vrfe8rTeQvsf89ARLS1cz5XIZ/uUGXxptQiVRUhJIybudXaZn52a7vbEBpmkyNb/A69YM9W8tDEJOTI2hpI\u002BSkvOZH2f13sNAB\u002B07sV9wHIdH9Unquz9RvoeUPtL3UFISKkky\u002BAT7HwTi6FpsgGma3N9\u002Bg5I\u002BKaFZyU8wOpJChwHnjiuE9wKCXyC/zsQGOI7DeELjtiUPbgky6Wd/HA3KBelC4AIpNfQGl88cQ0mfI5PugRhKkM2DUk0INYwtPI/dAGAlf4rbl06T6DyBVgeCABJzYPhwcm0V8ICNvwJKpVIf37h3IxSyKVAuBMDIYQAMw1jvaxwGrYNl3Xq5o79vat3Y3Nedj4\u002B11je7/m\u002BXOuyzFtDhUgAAAABJRU5ErkJggg==",
+              "WhenOpened": "2026-03-30T16:08:59.281Z",
               "EditorCaption": ""
             }
           ]
         },
         {
-          "DockedWidth": 598,
+          "DockedWidth": 830,
           "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "tile.py",
-              "DocumentMoniker": "C:\\repositories\\uni\\CS7IS2_Assignments\\code\\Labyrinth\\tile.py",
-              "RelativeDocumentMoniker": "Labyrinth\\tile.py",
-              "ToolTip": "C:\\repositories\\uni\\CS7IS2_Assignments\\code\\Labyrinth\\tile.py",
-              "RelativeToolTip": "Labyrinth\\tile.py",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAACAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "tttplayer.py",
+              "DocumentMoniker": "C:\\repositories\\uni\\CS7IS2_Assignments\\code\\TTT\\tttplayer.py",
+              "RelativeDocumentMoniker": "TTT\\tttplayer.py",
+              "ToolTip": "C:\\repositories\\uni\\CS7IS2_Assignments\\code\\TTT\\tttplayer.py",
+              "RelativeToolTip": "TTT\\tttplayer.py",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAAAAAAAAAAAA==",
               "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHfSURBVDhPpZCxaxNhGMZ/9zVJaUuDUlq1FBWLZBFTCXo4BFyU1qGKi4OkIHhkzF/g0KF00M2lR9YUdDDQQVAcJILoQUd1UNRmkhoRm8RL777v7nOoCZd4AcEH3uF5nvd73vd74X\u002BgtTai3LIsHeWDEEJct217a1DvwbIs7bpubFUqFW3b9naxWLwWfSOipAvHcfqqi0KhkMtms3cty1rsaomeG4FpmoMSANVqlXQ6nQMWgacMC4hOBchduEj\u002ByjKjScGh8SS1Wq3nxQZEN3j1eY/Vrfe8rTeQvsf89ARLS1cz5XIZ/uUGXxptQiVRUhJIybudXaZn52a7vbEBpmkyNb/A69YM9W8tDEJOTI2hpI\u002BSkvOZH2f13sNAB\u002B07sV9wHIdH9Unquz9RvoeUPtL3UFISKkky\u002BAT7HwTi6FpsgGma3N9\u002Bg5I\u002BKaFZyU8wOpJChwHnjiuE9wKCXyC/zsQGOI7DeELjtiUPbgky6Wd/HA3KBelC4AIpNfQGl88cQ0mfI5PugRhKkM2DUk0INYwtPI/dAGAlf4rbl06T6DyBVgeCABJzYPhwcm0V8ICNvwJKpVIf37h3IxSyKVAuBMDIYQAMw1jvaxwGrYNl3Xq5o79vat3Y3Nedj4\u002B11je7/m\u002BXOuyzFtDhUgAAAABJRU5ErkJggg==",
-              "WhenOpened": "2026-03-01T18:07:01.054Z",
+              "WhenOpened": "2026-03-30T22:24:55.435Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "tile_data.py",
-              "DocumentMoniker": "C:\\repositories\\uni\\CS7IS2_Assignments\\code\\Solvers\\tile_data.py",
-              "RelativeDocumentMoniker": "Solvers\\tile_data.py",
-              "ToolTip": "C:\\repositories\\uni\\CS7IS2_Assignments\\code\\Solvers\\tile_data.py",
-              "RelativeToolTip": "Solvers\\tile_data.py",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAaAAAAAAAAAA==",
+              "DocumentIndex": 5,
+              "Title": "tictactoe.py",
+              "DocumentMoniker": "C:\\repositories\\uni\\CS7IS2_Assignments\\code\\TTT\\tictactoe.py",
+              "RelativeDocumentMoniker": "TTT\\tictactoe.py",
+              "ToolTip": "C:\\repositories\\uni\\CS7IS2_Assignments\\code\\TTT\\tictactoe.py",
+              "RelativeToolTip": "TTT\\tictactoe.py",
+              "ViewState": "AgIAAIEAAAAAAAAAAAAAAPAAAAAaAAAAAAAAAA==",
               "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHfSURBVDhPpZCxaxNhGMZ/9zVJaUuDUlq1FBWLZBFTCXo4BFyU1qGKi4OkIHhkzF/g0KF00M2lR9YUdDDQQVAcJILoQUd1UNRmkhoRm8RL777v7nOoCZd4AcEH3uF5nvd73vd74X\u002BgtTai3LIsHeWDEEJct217a1DvwbIs7bpubFUqFW3b9naxWLwWfSOipAvHcfqqi0KhkMtms3cty1rsaomeG4FpmoMSANVqlXQ6nQMWgacMC4hOBchduEj\u002ByjKjScGh8SS1Wq3nxQZEN3j1eY/Vrfe8rTeQvsf89ARLS1cz5XIZ/uUGXxptQiVRUhJIybudXaZn52a7vbEBpmkyNb/A69YM9W8tDEJOTI2hpI\u002BSkvOZH2f13sNAB\u002B07sV9wHIdH9Unquz9RvoeUPtL3UFISKkky\u002BAT7HwTi6FpsgGma3N9\u002Bg5I\u002BKaFZyU8wOpJChwHnjiuE9wKCXyC/zsQGOI7DeELjtiUPbgky6Wd/HA3KBelC4AIpNfQGl88cQ0mfI5PugRhKkM2DUk0INYwtPI/dAGAlf4rbl06T6DyBVgeCABJzYPhwcm0V8ICNvwJKpVIf37h3IxSyKVAuBMDIYQAMw1jvaxwGrYNl3Xq5o79vat3Y3Nedj4\u002B11je7/m\u002BXOuyzFtDhUgAAAABJRU5ErkJggg==",
-              "WhenOpened": "2026-03-01T19:16:59.045Z",
+              "WhenOpened": "2026-03-30T16:12:22.679Z",
               "EditorCaption": ""
             }
           ]

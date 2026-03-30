@@ -4,8 +4,15 @@ from pygame.math import clamp
 
 class UI_Element:
 	def __init__(self, game):
+		self.enabled = True
 		game.eventPoller.add_listener(self.get_input)
 		game.afterUpdate.add_listener(self.draw)
+
+	def enable(self):
+		self.enabled = True
+
+	def disable(self):
+		self.enabled = False
 
 	def get_input(self, events):
 		pass
@@ -24,6 +31,9 @@ class UI_Text(UI_Element):
 		self.font = pygame.font.SysFont(None, font_size)
 
 	def draw(self, window: Surface, worldOffset: Vector2):
+		if not self.enabled:
+			return
+
 		surf = self.font.render(self.text, True, self.font_color)
 		window.blit(surf, self.screen_pos - Vector2(surf.get_width() / 2, 0))
 
@@ -64,6 +74,9 @@ class UI_Slider(UI_Element):
 		return self.value
 
 	def get_input(self, events):
+		if not self.enabled:
+			return
+
 		for event in events:
 			if event.type == pygame.MOUSEBUTTONDOWN and self.rect.collidepoint(event.pos):
 				self.active = True
@@ -80,6 +93,9 @@ class UI_Slider(UI_Element):
 					self.slide_callback(self.value)
 
 	def draw(self, window: Surface, worldOffset: Vector2):
+		if not self.enabled:
+			return
+
 		pygame.draw.rect(window, self.fillColor, self.rect)
 		progress = self.rect.x + (self.value - self.min)/(self.max-self.min)*self.rect.w
 		pygame.draw.circle(window, self.sliderColor, (int(progress), self.rect.y + 5), self.sliderSize)
@@ -109,11 +125,17 @@ class UI_Button(UI_Element):
 		self.font_colour = colour
 
 	def get_input(self, events):
+		if not self.enabled:
+			return
+
 		for event in events:
 			if event.type == pygame.MOUSEBUTTONDOWN and self.rect.collidepoint(event.pos):
 				self.callback()
 
 	def draw(self, window: Surface, worldOffset: Vector2):
+		if not self.enabled:
+			return
+
 		pygame.draw.rect(window, self.colour, self.rect)
 		label = self.font.render(self.text, True, self.font_colour)
 		window.blit(label, label.get_rect(center=self.rect.center))
@@ -130,6 +152,9 @@ class UI_Panel(UI_Element):
 		self.colour = colour
 
 	def draw(self, window, worldOffset):
+		if not self.enabled:
+			return
+
 		rect = pygame.Rect(self.pos.x - (self.size.x / 2), self.pos.y - (self.size.y / 2), self.size.x, self.size.y)
 		pygame.draw.rect(window, self.colour, rect)
 
@@ -155,6 +180,9 @@ class UI_InputField(UI_Element):
 		self.on_submit = on_submit
 
 	def get_input(self, events):
+		if not self.enabled:
+			return
+
 		for event in events:
 			if event.type == pygame.MOUSEBUTTONDOWN:
 				# activate if clicked
@@ -185,8 +213,103 @@ class UI_InputField(UI_Element):
 		self.text = text
 
 	def draw(self, window: Surface, worldOffset: Vector2):
+		if not self.enabled:
+			return
+
 		color = self.active_color if self.active else self.bg_color
 		pygame.draw.rect(window, color, self.rect)
 
 		txt_surface = self.font.render(self.text, True, self.text_color)
 		window.blit(txt_surface, (self.rect.x + 5, self.rect.y + 5))
+
+class UI_Dropdown(UI_Element):
+	def __init__(self, game, pos: Vector2, size: Vector2, options: list[str], on_select=None, initial_index=0):
+		super().__init__(game)
+		game.postDraw.add_listener(self.draw_dropdown)
+
+		self.rect = pygame.Rect(pos.x - size.x / 2, pos.y - size.y / 2, size.x, size.y)
+		self.options = options
+		self.selected = initial_index
+		self.open = False
+		self.on_select = on_select
+
+		self.bg_color       = "cornsilk4"
+		self.hover_color    = "lightskyblue"
+		self.text_color     = "black"
+		self.outline_color  = "black"
+		self.font           = pygame.font.SysFont(None, 20)
+
+		self._hovered = -1  # index of option currently hovered, -1 = none
+
+    # ── option rects are derived on the fly so they always match self.rect ──
+
+	def _option_rect(self, i: int) -> pygame.Rect:
+		return pygame.Rect(self.rect.x, self.rect.bottom + i * self.rect.height,
+							self.rect.width, self.rect.height)
+
+	def get_selected(self) -> str:
+		return self.options[self.selected]
+
+	def set_selected(self, index: int):
+		self.selected = index
+
+    # ── input ───────────────────────────────────────────────────────────────
+
+	def get_input(self, events):
+		if not self.enabled:
+			return
+
+		for event in events:
+
+			if event.type == pygame.MOUSEBUTTONDOWN:
+				if self.rect.collidepoint(event.pos):
+					self.open = not self.open
+
+				elif self.open:
+					for i in range(len(self.options)):
+						if self._option_rect(i).collidepoint(event.pos):
+							self.selected = i
+							if self.on_select:
+								self.on_select(i, self.options[i])
+							break
+					self.open = False  # close on any outside click too
+
+			if event.type == pygame.MOUSEMOTION and self.open:
+				self._hovered = -1
+				for i in range(len(self.options)):
+					if self._option_rect(i).collidepoint(event.pos):
+						self._hovered = i
+						break
+
+    # ── draw ────────────────────────────────────────────────────────────────
+
+	def draw(self, window: Surface, worldOffset: Vector2):
+		if not self.enabled:
+			return
+
+		# Header button
+		pygame.draw.rect(window, self.bg_color, self.rect)
+		pygame.draw.rect(window, self.outline_color, self.rect, 1)
+
+		label = self.font.render(self.options[self.selected], True, self.text_color)
+		window.blit(label, label.get_rect(center=self.rect.center))
+
+		# Arrow indicator
+		arrow = "^" if self.open else "v"
+		arrow_surf = self.font.render(arrow, True, self.text_color)
+		window.blit(arrow_surf, arrow_surf.get_rect(centery=self.rect.centery, right=self.rect.right - 6))
+
+	def draw_dropdown(self, window: Surface, worldOffset: Vector2):
+		if not self.open or not self.enabled:
+			return
+
+		# Drop-down list
+		for i, option in enumerate(self.options):
+			r = self._option_rect(i)
+			color = self.hover_color if i == self._hovered else self.bg_color
+			pygame.draw.rect(window, color, r)
+			pygame.draw.rect(window, self.outline_color, r, 1)
+
+			opt_label = self.font.render(option, True, self.text_color)
+			window.blit(opt_label, opt_label.get_rect(center=r.center))
+

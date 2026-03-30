@@ -22,6 +22,8 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="C4\c4player.py" />
+    <Compile Include="C4\connect4.py" />
     <Compile Include="event.py" />
     <Compile Include="game.py" />
     <Compile Include="Labyrinth\labyrinth_generator.py" />
@@ -35,13 +37,20 @@
     <Compile Include="Solvers\solver.py" />
     <Compile Include="Labyrinth\tile.py" />
     <Compile Include="Solvers\tile_data.py" />
+    <Compile Include="TTT\tictactoe.py" />
+    <Compile Include="TTT\tttplayer.py" />
     <Compile Include="UI\uielement.py" />
     <Compile Include="UI\user_interface.py" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Labyrinth\" />
+    <Folder Include="A1\Labyrinth\" />
     <Folder Include="Data\" />
+    <Folder Include="A1\" />
+    <Folder Include="A1\Solvers\" />
+    <Folder Include="Labyrinth\" />
+    <Folder Include="C4\" />
     <Folder Include="Solvers\" />
+    <Folder Include="TTT\" />
     <Folder Include="UI\" />
   </ItemGroup>
   <ItemGroup>
