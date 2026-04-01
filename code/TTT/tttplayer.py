@@ -75,12 +75,6 @@ class TTT_Baseline_Player(TTT_Player):
 	def __init__(self, game, team):
 		super().__init__(game, team)
 
-	def start_turn(self):
-		super().start_turn()
-
-	def end_turn(self):
-		super().end_turn()
-
 	def update(self):
 		if not self.turn or not self.game.ttt.running:
 			return

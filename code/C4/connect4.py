@@ -1,5 +1,6 @@
 ﻿import pygame
 from pygame import Surface, Vector2
+from C4.c4player import C4_Player, C4_Baseline_Player
 from event import Event
 
 cardinal_dirs = [
@@ -14,6 +15,11 @@ class Connect4:
 	box_color = "black"
 	bound_width = 2
 	marker_fill = 0.9
+
+	type_dict = {
+		"Human": C4_Player,
+		"Baseline": C4_Baseline_Player
+	}
 
 	def __init__(self, game, worldOffset, player1, player2):
 		self.scale = 100 * Vector2(1, 1)
@@ -65,6 +71,18 @@ class Connect4:
 	
 	def disable(self):
 		self.enabled = False
+
+	def set_player(self, idx, player_type):
+		if player_type not in self.type_dict.keys():
+			print(f"Invalid Connect 4 player type '{player_type}'!")
+			return
+
+		if idx == 1:
+			self.p1 = Connect4.type_dict[player_type](self.game, 1)
+		elif idx == 2:
+			self.p2 = Connect4.type_dict[player_type](self.game, 2)
+		else:
+			print("Invalid player number! Please use numbers 1 or 2!")
 
 	def start(self):
 		self.reset()
@@ -178,9 +196,6 @@ class Connect4:
 			return None if not self.is_grid_full() else "Draw"
 
 		return self.p1.name if team == self.p1.marker else self.p2.name
-
-		# check for draw if no winner
-
 
 	def on_win(self, winner):
 		self.running = False

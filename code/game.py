@@ -30,8 +30,8 @@ class Game:
 		self.ttt_ui = TicTacToeInterface(game=self)
 
 		# Connect 4
-		self.c4_p1 = C4_Player(self)
-		self.c4_p2 = C4_Player(self)
+		self.c4_p1 = C4_Player(self, 1)
+		self.c4_p2 = C4_Player(self, 2)
 		self.c4 = Connect4(self, self.worldToScreen, self.c4_p1, self.c4_p2)
 		self.c4_ui = Connect4Interface(game=self)
 		
