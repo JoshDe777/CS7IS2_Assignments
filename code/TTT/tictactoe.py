@@ -1,7 +1,7 @@
-﻿from re import S
-from pygame import Surface, Vector2	
-import pygame
+﻿from pygame import Surface, Vector2	
+import pygame, csv, os
 
+from TTT.tttplayer import TTT_Baseline_Player, TTT_Player
 from event import Event
 
 class TicTacToe:
@@ -29,6 +29,13 @@ class TicTacToe:
 	box_color = "black"
 	bound_width = 2
 	marker_fill = 0.9
+
+	type_dict = {
+		"Human": TTT_Player,
+		"Baseline": TTT_Baseline_Player
+	}
+
+	save_path = "Data/ttt.csv"
 
 	def __init__(self, game, worldOffset, player1, player2):
 		self.scale = 100 * Vector2(1, 1)
@@ -109,30 +116,41 @@ class TicTacToe:
 		self.game.afterUpdate.add_listener(self.draw_tiles)
 
 	def enable(self):
+		print("Enabled TTT!")
 		self.enabled = True
 
 	def disable(self):
+		print("Disabled TTT!")
 		self.enabled = False
 
-	def set_player(self, idx, player):
+	def set_player(self, idx, player_type):
+		if player_type not in self.type_dict.keys():
+			print(f"Invalid Tic Tac Toe player type '{player_type}'!")
+			return
+
 		if idx == 1:
-			self.p1 = player
-			player.name = "Player 1"
+			self.p1 = TicTacToe.type_dict[player_type](self.game, 1)
 		elif idx == 2:
-			self.p2 = player
-			player.name = "Player 2"
+			self.p2 = TicTacToe.type_dict[player_type](self.game, 2)
 		else:
 			print("Invalid player number! Please use numbers 1 or 2!")
 
 	def start(self):
+		self.reset()
 		self.running = True
 		self.start_turn(self.p1)
+
+		if not os.path.exists(TicTacToe.save_path):
+			fields = ["Player 1", "Player 2", "Winner", "n_moves"]
+			with open(TicTacToe.save_path, 'w') as f:
+				writer = csv.writer(f)
+				writer.writerow(fields)
 
 	def start_turn(self, player):
 		self.active_player.on_turn_end.invoke()
 		self.active_player = player
 		self.on_turn_change.invoke(self.active_player.name)
-		player.on_turn_start.invoke()
+		self.active_player.on_turn_start.invoke()
 
 	def reset(self):
 		self.grid = [
@@ -144,8 +162,8 @@ class TicTacToe:
 		self.active_player = self.p1
 
 	def get_input(self, events):
-		# don't react if game hasn't started.
-		if not self.running or not self.enabled:
+		# don't react if game hasn't started, or if not reacting to a 'real' player.
+		if not self.running or not self.enabled or not type(self.active_player) == TTT_Player:
 			return
 
 		for event in events:
@@ -155,7 +173,7 @@ class TicTacToe:
 					if rect.collidepoint(event.pos):
 						self.place_tile(i)
 
-	def eval_winner(self, grid_index: int) -> str:
+	def eval_winner(self, state, grid_index: int, player, opponent) -> str:
 		"""
 		Inspects the current game state to determine whether there is a winner.
 		Returns none if the grid is neither full nor contains 3 consecutive markers of the same type.
@@ -168,23 +186,23 @@ class TicTacToe:
 			return None
 
 		# vertical:
-		has_winner = self.grid[grid_index] == self.grid[n[0]] == self.grid[n[1]]
+		has_winner = state[grid_index] == state[n[0]] == state[n[1]]
 		# horizontal
-		has_winner = has_winner or (self.grid[grid_index] == self.grid[n[2]] == self.grid[n[3]])
+		has_winner = has_winner or (state[grid_index] == state[n[2]] == state[n[3]])
 		# diagonal
 		if n[4] is not None:
-			has_winner = has_winner or (self.grid[grid_index] == self.grid[n[4]] == self.grid[n[5]])
+			has_winner = has_winner or (state[grid_index] == state[n[4]] == state[n[5]])
 			# case middle box, needs diagonal check both ways
 			if n[6] is not None:
-				has_winner = has_winner or (self.grid[grid_index] == self.grid[n[6]] == self.grid[n[7]])
+				has_winner = has_winner or (state[grid_index] == state[n[6]] == state[n[7]])
 
 
 		if has_winner:
 			self.running = False
-			return self.p1.name if self.grid[grid_index] == self.p1.marker else self.p2.name
+			return player.name if state[grid_index] == player.marker else opponent.name
 
 		# if full grid, declare draw
-		if self.grid.count('e') == 0:
+		if state.count('e') == 0:
 			self.running = False
 			return "Draw"
 		else:
@@ -201,7 +219,13 @@ class TicTacToe:
 
 		self.grid[grid_index] = self.active_player.marker
 
-		winner = self.eval_winner(grid_index)
+		opponent = self.p1 if self.active_player == self.p2 else self.p2
+		winner = self.eval_winner(
+			state=self.grid, 
+			grid_index=grid_index, 
+			player=self.active_player, 
+			opponent=opponent
+		)
 		if winner is not None:
 			self.on_win(winner)
 			return
@@ -245,4 +269,22 @@ class TicTacToe:
 		else:
 			print(f"{winner} wins!")
 
-		self.reset()
+		self.collect_data(winner)
+
+	def get_player_type(self, player):
+		if type(player) == TTT_Player: 
+			return "Human"
+		if type(player) == TTT_Baseline_Player: 
+			return "Baseline"
+
+	def collect_data(self, winner):
+		# player 1 type, player 2 type, result/winner, n(total moves)
+		csv_entry = [
+			self.get_player_type(self.p1),
+			self.get_player_type(self.p2),
+			winner,
+			9 - self.grid.count('e')
+		]
+		with open(TicTacToe.save_path, 'a', newline='') as f:
+			writer = csv.writer(f)
+			writer.writerow(csv_entry)

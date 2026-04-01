@@ -24,8 +24,8 @@ class Game:
 		self.active_game = None
 
 		# Tic Tac Toe
-		self.ttt_p1 = TTT_Player(self)
-		self.ttt_p2 = TTT_Player(self)
+		self.ttt_p1 = TTT_Player(self, 1)
+		self.ttt_p2 = TTT_Player(self, 2)
 		self.ttt = TicTacToe(self, self.worldToScreen, self.ttt_p1, self.ttt_p2)
 		self.ttt_ui = TicTacToeInterface(game=self)
 
@@ -39,8 +39,10 @@ class Game:
 	def onBeforeUpdate(self):
 		events = pygame.event.get()
 		for event in events:
-				if event.type == pygame.QUIT:
-					self.running = False
+			event.consumed = False
+			if event.type == pygame.QUIT:
+				self.running = False
+
 		self.eventPoller.invoke(events)
 		self.beforeUpdate.invoke()
 		self.window.fill(color="azure4")
@@ -62,6 +64,7 @@ class Game:
 		pygame.init()
 		self.window = pygame.display.set_mode(self.size)
 		self.clock = pygame.time.Clock()
+		self.close_c4()
 		self.open_TTT()
 
 		while self.running:
@@ -88,6 +91,10 @@ class Game:
 		self.ttt.disable()
 		self.ttt_ui.disable()
 
+	def set_TTT_agent(self, idx, _type):
+		if self.active_game == self.ttt:
+			self.ttt.set_player(idx, _type)
+
 	def open_c4(self):
 		self.active_game = self.c4
 		self.c4.enable()
@@ -98,3 +105,7 @@ class Game:
 			self.active_game = None
 		self.c4.disable()
 		self.c4_ui.disable()
+
+	def set_C4_agent(self, idx, _type):
+		if self.active_game == self.c4:
+			self.c4.set_player(idx, _type)

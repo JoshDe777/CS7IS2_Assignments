@@ -129,7 +129,8 @@ class UI_Button(UI_Element):
 			return
 
 		for event in events:
-			if event.type == pygame.MOUSEBUTTONDOWN and self.rect.collidepoint(event.pos):
+			if event.type == pygame.MOUSEBUTTONDOWN and not getattr(event, 'consumed', False) and self.rect.collidepoint(event.pos):
+				event.consumed = True
 				self.callback()
 
 	def draw(self, window: Surface, worldOffset: Vector2):
