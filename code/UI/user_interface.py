@@ -15,6 +15,8 @@ class TicTacToeInterface:
 		self.game = game
 		game.ttt.on_game_end.add_listener(self.display_winner)
 		game.ttt.on_turn_change.add_listener(self.update_game_state)
+		self.active_p1_type = 0
+		self.active_p2_type = 0
 
 		self.pos = Vector2(1155, 360)
 		self.panel = UI_Panel(game, self.pos, Vector2(200, 400), "white")
@@ -67,18 +69,22 @@ class TicTacToeInterface:
 			text = f"{winner} wins!"
 		self.game_state.set_text(text)
 
-	def update_p1_agent_type(self, _, agent_type):
+	def update_p1_agent_type(self, idx, agent_type):
 		if self.game.ttt.running:
-			print("Can't change agent type whilst playing!")
-			return
-
-		self.game.set_TTT_agent(1, agent_type)
-
-	def update_p2_agent_type(self, _, agent_type):
-		if self.game.ttt.running:
+			self.p1_input.set_selected(self.active_p1_type)
 			print("Can't change agent type whilst playing!")
 			return
 		
+		self.active_p1_type = idx
+		self.game.set_TTT_agent(1, agent_type)
+
+	def update_p2_agent_type(self, idx, agent_type):
+		if self.game.ttt.running:
+			self.p2_input.set_selected(self.active_p2_type)
+			print("Can't change agent type whilst playing!")
+			return
+		
+		self.active_p2_type = idx
 		self.game.set_TTT_agent(2, agent_type)
 
 	def move_to_c4(self):
@@ -124,6 +130,8 @@ class Connect4Interface:
 		self.game = game
 		game.c4.on_game_end.add_listener(self.display_winner)
 		game.c4.on_turn_change.add_listener(self.update_game_state)
+		self.active_p1_type = 0
+		self.active_p2_type = 0
 
 		self.pos = Vector2(1155, 360)
 		self.panel = UI_Panel(game, self.pos, Vector2(200, 400), "white")
@@ -155,7 +163,7 @@ class Connect4Interface:
 		last_y += 20
 		self.separator3 = UI_Text(game=game, text="---------------------------------------------", font_color="black", pos=Vector2(0, last_y) + self.pos)
 
-		# transition to connect 4
+		# transition to tic tac toe
 		last_y += 40
 		self.ttt_button = UI_Button(game=game, buttonText="Play Tic Tac Toe", rect=Rect(0, 0, 175, 50), on_press_action=self.move_to_ttt)
 		self.ttt_button.set_position(self.pos + Vector2(0, last_y))
@@ -207,21 +215,23 @@ class Connect4Interface:
 	def start_game(self):
 		self.game.c4.start()
 
-	def update_p1_agent_type(self, _, agent_type):
+	def update_p1_agent_type(self, idx, agent_type):
 		if self.game.c4.running:
+			self.p1_input.set_selected(self.active_p1_type)
 			print("Can't change agent type whilst playing!")
 			return
 
-		print(f"Active p1 agent type: {agent_type} (Not implemented unless Human).")
-		# self.game.set_c4_agent(1, agent_type)
+		self.active_p1_type = idx
+		self.game.set_C4_agent(1, agent_type)
 
-	def update_p2_agent_type(self, _, agent_type):
+	def update_p2_agent_type(self, idx, agent_type):
 		if self.game.c4.running:
+			self.p2_input.set_selected(self.active_p2_type)
 			print("Can't change agent type whilst playing!")
 			return
-
-		print(f"Active p2 agent type: {agent_type} (Not implemented unless Human).")
-		# self.game.set_c4_agent(2, agent_type)
+		
+		self.active_p2_type = idx
+		self.game.set_C4_agent(2, agent_type)
 
 	def move_to_ttt(self):
 		self.game.close_c4()

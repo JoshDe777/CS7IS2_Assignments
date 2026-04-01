@@ -88,6 +88,7 @@ class Game:
 	def close_TTT(self):
 		if self.active_game == self.ttt:
 			self.active_game = None
+		self.ttt.reset()
 		self.ttt.disable()
 		self.ttt_ui.disable()
 
@@ -103,6 +104,7 @@ class Game:
 	def close_c4(self):
 		if self.active_game == self.c4:
 			self.active_game = None
+		self.c4.reset()
 		self.c4.disable()
 		self.c4_ui.disable()
 

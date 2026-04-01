@@ -264,11 +264,13 @@ class UI_Dropdown(UI_Element):
 
 			if event.type == pygame.MOUSEBUTTONDOWN:
 				if self.rect.collidepoint(event.pos):
+					event.consumed = True
 					self.open = not self.open
 
 				elif self.open:
 					for i in range(len(self.options)):
 						if self._option_rect(i).collidepoint(event.pos):
+							event.consumed = True
 							self.selected = i
 							if self.on_select:
 								self.on_select(i, self.options[i])

@@ -86,6 +86,10 @@ class Connect4:
 
 	def start(self):
 		self.reset()
+
+		print(f"Player 1 is Human? {type(self.p1) == C4_Player}")
+		print(f"Player 2 is Human? {type(self.p2) == C4_Player}")
+
 		self.running = True
 		self.start_turn(self.p1)
 
@@ -109,8 +113,7 @@ class Connect4:
 		self.active_player.on_turn_start.invoke()
 
 	def add_to_slot(self, idx):
-		print(f"Placing tile at row {idx}.")
-
+		# no 8th+ column
 		if idx > 6:
 			return
 
@@ -118,6 +121,7 @@ class Connect4:
 			print("Column is already full!")
 			return
 
+		print(f"{self.active_player.name} added a token to column {idx+1}")
 		self.grid[idx].append(self.active_player.marker)
 
 		winner = self.eval_winner(idx)
@@ -202,7 +206,8 @@ class Connect4:
 		self.on_game_end.invoke(winner)
 
 	def get_input(self, events):
-		if not self.running or not self.enabled:
+		# ignore input when game not running, or sourced by inactive player.
+		if not self.running or not self.enabled or not type(self.active_player) == C4_Player:
 			return
 
 		for event in events:
