@@ -23,40 +23,28 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Algorithms\minmax.py" />
+    <Compile Include="Algorithms\rl.py" />
     <Compile Include="C4\c4player.py" />
     <Compile Include="C4\connect4.py" />
+    <Compile Include="C4\utils.py" />
     <Compile Include="event.py" />
     <Compile Include="game.py" />
-    <Compile Include="Labyrinth\labyrinth_generator.py" />
     <Compile Include="main.py" />
-    <Compile Include="Solvers\astar_solver.py" />
-    <Compile Include="Solvers\bfs_solver.py" />
-    <Compile Include="Solvers\dfs_solver.py" />
-    <Compile Include="Solvers\markov_solver.py" />
-    <Compile Include="Solvers\mdp_policy_solver.py" />
-    <Compile Include="Solvers\mdp_value_solver.py" />
-    <Compile Include="Solvers\solver.py" />
-    <Compile Include="Labyrinth\tile.py" />
-    <Compile Include="Solvers\tile_data.py" />
+    <Compile Include="train.py" />
     <Compile Include="TTT\tictactoe.py" />
     <Compile Include="TTT\tttplayer.py" />
+    <Compile Include="TTT\utils.py" />
     <Compile Include="UI\uielement.py" />
     <Compile Include="UI\user_interface.py" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="A1\Labyrinth\" />
     <Folder Include="Data\" />
-    <Folder Include="A1\" />
-    <Folder Include="A1\Solvers\" />
-    <Folder Include="Labyrinth\" />
     <Folder Include="C4\" />
     <Folder Include="Algorithms\" />
-    <Folder Include="Solvers\" />
     <Folder Include="TTT\" />
     <Folder Include="UI\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="csv_columns.txt" />
     <Content Include="requirements.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />

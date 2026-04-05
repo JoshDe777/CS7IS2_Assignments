@@ -81,11 +81,17 @@ class Game:
 
 	# A3 exclusive
 	def open_TTT(self):
+		if self.active_game == self.ttt:
+			return
+
 		self.active_game = self.ttt
 		self.ttt.enable()
 		self.ttt_ui.enable()
 
 	def close_TTT(self):
+		if self.active_game != self.ttt:
+			return
+
 		if self.active_game == self.ttt:
 			self.active_game = None
 		self.ttt.reset()
@@ -97,11 +103,17 @@ class Game:
 			self.ttt.set_player(idx, _type)
 
 	def open_c4(self):
+		if self.active_game == self.c4:
+			return
+
 		self.active_game = self.c4
 		self.c4.enable()
 		self.c4_ui.enable()
 
 	def close_c4(self):
+		if self.active_game != self.c4:
+			return
+
 		if self.active_game == self.c4:
 			self.active_game = None
 		self.c4.reset()

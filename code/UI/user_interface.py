@@ -33,7 +33,7 @@ class TicTacToeInterface:
 		# player 1 type selector
 		last_y += 15
 		self.p1_text = UI_Text(game=game, text=f"Player 1:", font_color="black", pos=Vector2(0, last_y) + self.pos, font_size=15)
-		self.p1_symbol = UI_Text(game=game, text="o", font_color="blue", pos = Vector2(90, last_y) + self.pos, font_size=20)
+		self.p1_symbol = UI_Text(game=game, text="x", font_color="red", pos = Vector2(90, last_y) + self.pos, font_size=20)
 		last_y += 40
 		self.p1_input = UI_Dropdown(game=game, pos=Vector2(0, last_y) + self.pos, size=Vector2(175, 50), options=options, on_select=self.update_p1_agent_type)
 		last_y += 20
@@ -42,7 +42,7 @@ class TicTacToeInterface:
 		# player 2 type selector
 		last_y += 15
 		self.p2_text = UI_Text(game=game, text=f"Player 2:", font_color="black", pos=Vector2(0, last_y) + self.pos, font_size=15)
-		self.p2_symbol = UI_Text(game=game, text="x", font_color="red", pos = Vector2(90, last_y) + self.pos, font_size=20)
+		self.p2_symbol = UI_Text(game=game, text="o", font_color="blue", pos = Vector2(90, last_y) + self.pos, font_size=20)
 		last_y += 40
 		self.p2_input = UI_Dropdown(game=game, pos=Vector2(0, last_y) + self.pos, size=Vector2(175, 50), options=options, on_select=self.update_p2_agent_type)
 		last_y += 20

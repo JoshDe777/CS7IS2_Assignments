@@ -1,7 +1,7 @@
 ﻿from pygame import Surface, Vector2	
 import pygame, csv, os
 
-from TTT.tttplayer import TTT_Baseline_Player, TTT_Player
+from TTT.tttplayer import TTT_Baseline_Player, TTT_DQL_Player, TTT_MinMax_Player, TTT_Player, TTT_Pruned_MinMax_Player, TTT_TQRL_Player
 from event import Event
 
 class TicTacToe:
@@ -32,7 +32,11 @@ class TicTacToe:
 
 	type_dict = {
 		"Human": TTT_Player,
-		"Baseline": TTT_Baseline_Player
+		"Baseline": TTT_Baseline_Player,
+		"MinMax": TTT_MinMax_Player,
+		"MinMax-AB": TTT_Pruned_MinMax_Player,
+		"Tabular QRL": TTT_TQRL_Player,
+		"DQN-RL": TTT_DQL_Player
 	}
 
 	save_path = "Data/ttt.csv"
@@ -129,9 +133,13 @@ class TicTacToe:
 			return
 
 		if idx == 1:
+			self.p1.invalidate()
 			self.p1 = TicTacToe.type_dict[player_type](self.game, 1)
+			self.p1.name = f"Player 1 ({player_type})"
 		elif idx == 2:
+			self.p2.invalidate()
 			self.p2 = TicTacToe.type_dict[player_type](self.game, 2)
+			self.p2.name = f"Player 2 ({player_type})"
 		else:
 			print("Invalid player number! Please use numbers 1 or 2!")
 
@@ -217,6 +225,7 @@ class TicTacToe:
 			print("[DENIED] Attempting to place a marker in already occupied tile.")
 			return
 
+		#print(f"{self.active_player.name} placed a marker on tile {grid_index}!")
 		self.grid[grid_index] = self.active_player.marker
 
 		opponent = self.p1 if self.active_player == self.p2 else self.p2
@@ -264,10 +273,10 @@ class TicTacToe:
 
 	def on_win(self, winner):
 		self.on_game_end.invoke(winner)
-		if winner == "Draw":
-			print(f"The match ends in a draw!")
-		else:
-			print(f"{winner} wins!")
+		#if winner == "Draw":
+			#print(f"The match ends in a draw!")
+		#else:
+			#print(f"{winner} wins!")
 
 		self.collect_data(winner)
 

@@ -1,6 +1,6 @@
-﻿import pygame
+﻿import pygame, csv, os
 from pygame import Surface, Vector2
-from C4.c4player import C4_Player, C4_Baseline_Player
+from C4.c4player import C4_DQL_Player, C4_MinMax_Player, C4_Player, C4_Baseline_Player, C4_Pruned_MinMax_Player, C4_TQRL_Player
 from event import Event
 
 cardinal_dirs = [
@@ -18,8 +18,14 @@ class Connect4:
 
 	type_dict = {
 		"Human": C4_Player,
-		"Baseline": C4_Baseline_Player
+		"Baseline": C4_Baseline_Player,
+		"MinMax": C4_MinMax_Player,
+		"MinMax-AB": C4_Pruned_MinMax_Player,
+		"Tabular QRL": C4_TQRL_Player,
+		"DQN-RL": C4_DQL_Player
 	}
+
+	save_path = "Data/connect4.csv"
 
 	def __init__(self, game, worldOffset, player1, player2):
 		self.scale = 100 * Vector2(1, 1)
@@ -78,20 +84,27 @@ class Connect4:
 			return
 
 		if idx == 1:
+			self.p1.invalidate()
 			self.p1 = Connect4.type_dict[player_type](self.game, 1)
+			self.p1.name = f"Player 1 ({player_type})"
 		elif idx == 2:
+			self.p2.invalidate()
 			self.p2 = Connect4.type_dict[player_type](self.game, 2)
+			self.p2.name = f"Player 2 ({player_type})"
 		else:
 			print("Invalid player number! Please use numbers 1 or 2!")
 
 	def start(self):
 		self.reset()
 
-		print(f"Player 1 is Human? {type(self.p1) == C4_Player}")
-		print(f"Player 2 is Human? {type(self.p2) == C4_Player}")
-
 		self.running = True
 		self.start_turn(self.p1)
+
+		if not os.path.exists(Connect4.save_path):
+			fields = ["Player 1", "Player 2", "Winner", "n_moves"]
+			with open(Connect4.save_path, 'w') as f:
+				writer = csv.writer(f)
+				writer.writerow(fields)
 
 	def reset(self):
 		self.grid = [
@@ -113,15 +126,18 @@ class Connect4:
 		self.active_player.on_turn_start.invoke()
 
 	def add_to_slot(self, idx):
+		if idx is None:
+			return
+
 		# no 8th+ column
 		if idx > 6:
 			return
 
-		if len(self.grid[idx]) == 6:
+		if len(self.grid[idx]) >= 6:
 			print("Column is already full!")
 			return
 
-		print(f"{self.active_player.name} added a token to column {idx+1}")
+		#print(f"{self.active_player.name} added a token to column {idx+1}")
 		self.grid[idx].append(self.active_player.marker)
 
 		winner = self.eval_winner(idx)
@@ -261,3 +277,15 @@ class Connect4:
 				pygame.draw.circle(window, color, inner.center, int(min(inner.width, inner.height) / 2))
 
 			self.draw_arrow(window, self.rect_grid[col][6], "green")
+
+	def collect_data(self, winner):
+		# player 1 type, player 2 type, result/winner, n(total moves)
+		csv_entry = [
+			self.get_player_type(self.p1),
+			self.get_player_type(self.p2),
+			winner,
+			9 - self.grid.count('e')
+		]
+		with open(Connect4.save_path, 'a', newline='') as f:
+			writer = csv.writer(f)
+			writer.writerow(csv_entry)

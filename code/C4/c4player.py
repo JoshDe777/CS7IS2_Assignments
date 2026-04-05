@@ -1,4 +1,7 @@
-﻿from event import Event
+﻿from Algorithms.minmax import MinMax_Default, MinMax_AB_Pruning
+from Algorithms.rl import DQN_RL, Tabular_QRL
+from C4.utils import C4_determine_winner, C4_assess_partial_state
+from event import Event
 from pygame import Vector2
 import random
 
@@ -13,6 +16,10 @@ class C4_Player:
 	player_id = 0
 	symbol = ['x', 'o']
 	symbol_colors = ["red", "yellow"]
+
+	def get_other_marker(marker):
+		"""utility function to get the opponent's marker"""
+		return C4_Player.symbol[0] if C4_Player.symbol[1] == marker else C4_Player.symbol[1]
 
 	def __init__(self, game, team):
 		self.id = C4_Player.player_id
@@ -38,10 +45,19 @@ class C4_Player:
 		self.turn = True
 
 	def update(self):
-		pass
+		if not self.turn or not self.game.c4.running:
+			return
+		
+		self.place_tile(self.choose_next_move(self.game.c4.grid))
 
 	def end_turn(self):
 		self.turn = False
+
+	def choose_next_move(self, state):
+		pass
+
+	def invalidate(self):
+		self.game.update.remove_listener(self.update)
 
 
 class C4_Baseline_Player(C4_Player):
@@ -54,14 +70,8 @@ class C4_Baseline_Player(C4_Player):
 	def __init__(self, game, team):
 		super().__init__(game, team)
 
-	def update(self):
-		if not self.turn or not self.game.c4.running:
-			return
 
-		self.eval_state()
-
-	def eval_state(self):
-		state = self.game.c4.grid
+	def choose_next_move(self, state):
 		n_placeable = 0
 		placeable_cols = []
 
@@ -91,8 +101,7 @@ class C4_Baseline_Player(C4_Player):
 				max_val[0].append(j)
 		
 		chosen_tile = max_val[0] if len(max_val) == 1 else random.choice(max_val[0])
-		self.place_tile(chosen_tile)
-
+		return chosen_tile
 
 	def eval_tile(self, state, idx):
 		#print(f"--------------------------- Start Eval Col {idx} ---------------------------")
@@ -215,3 +224,158 @@ class C4_Baseline_Player(C4_Player):
 		
 		# otherwise return weight scaled by largest potential line
 		return line * C4_Baseline_Player.WEIGHTS["LINE"]
+
+class C4_MinMax_Player(C4_Player):
+	depth = 5
+
+	TERMINAL_WEIGHTS = {
+		"WIN": 100,
+		"BASE": 0,
+		"LOSE": -100
+	}
+
+	# mirror desirable states with (own tokens, empty tokens) in any given sequence of 4 grid spaces.
+	PARTIAL_WEIGHTS = {
+		(4, 0): 100,
+		(2, 2): 2,
+		(3, 1): 5
+	}
+
+	def __init__(self, game, team):
+		super().__init__(game, team)
+
+	def choose_next_move(self, state):
+		return MinMax_Default.evaluate(
+			game="C4",
+			state=state,
+			team=self.marker,
+			opponent=C4_Player.get_other_marker(self.marker),
+			max_depth=C4_MinMax_Player.depth,
+			utility_func=self.eval_state
+		)
+
+	def eval_state(self, state, terminal):
+		n_empty = sum([1 for x in state if len(x) < 6])
+		# if leaf state (no more moves after) evaluate whether the state is a win or loss
+		if terminal:
+			winner = C4_determine_winner(state)
+			return C4_MinMax_Player.TERMINAL_WEIGHTS["BASE"] if winner is None \
+				else C4_MinMax_Player.TERMINAL_WEIGHTS["WIN"] if winner == self.marker \
+				else C4_MinMax_Player.TERMINAL_WEIGHTS["LOSE"]
+
+		return C4_assess_partial_state(state, self.marker, C4_MinMax_Player.PARTIAL_WEIGHTS)
+
+class C4_Pruned_MinMax_Player(C4_Player):
+	depth = 5
+
+	TERMINAL_WEIGHTS = {
+		"WIN": 100,
+		"BASE": 0,
+		"LOSE": -100
+	}
+
+	# mirror desirable states with (own tokens, empty tokens) in any given sequence of 4 grid spaces.
+	PARTIAL_WEIGHTS = {
+		(4, 0): 100,
+		(2, 2): 2,
+		(3, 1): 5
+	}
+
+	def __init__(self, game, team):
+		super().__init__(game, team)
+
+	def choose_next_move(self, state):
+		return MinMax_AB_Pruning.evaluate(
+			game="C4",
+			state=state,
+			team=self.marker,
+			opponent=C4_Player.get_other_marker(self.marker),
+			max_depth=C4_Pruned_MinMax_Player.depth,
+			utility_func=self.eval_state
+		)
+
+	def eval_state(self, state, terminal):
+		# if leaf state (no more moves after) evaluate whether the state is a win or loss
+		if terminal:
+			winner = C4_determine_winner(state)
+			return C4_Pruned_MinMax_Player.TERMINAL_WEIGHTS["BASE"] if winner is None \
+				else C4_Pruned_MinMax_Player.TERMINAL_WEIGHTS["WIN"] if winner == self.marker \
+				else C4_Pruned_MinMax_Player.TERMINAL_WEIGHTS["LOSE"]
+
+		return C4_assess_partial_state(state, self.marker, C4_Pruned_MinMax_Player.PARTIAL_WEIGHTS)
+
+	def end_turn(self):
+		super().end_turn()
+		print(f"Pruned {MinMax_AB_Pruning.get_n_pruned()} states!")
+
+
+class C4_TQRL_Player(C4_Player):
+	TERMINAL_WEIGHTS = {
+		"WIN": 100,
+		"BASE": 0,
+		"LOSE": -100
+	}
+
+	# mirror desirable states with (own tokens, empty tokens) in any given sequence of 4 grid spaces.
+	PARTIAL_WEIGHTS = {
+		(4, 0): 100,
+		(2, 2): 2,
+		(3, 1): 5
+	}
+
+	def __init__(self, game, team):
+		super().__init__(game, team)
+
+	def choose_next_move(self, state):
+		return Tabular_QRL.evaluate(
+			game="C4",
+			state=state,
+			team=self.marker,
+			utility_func=self.eval_state
+		)
+
+	def eval_state(self, state, terminal):
+		# if leaf state (no more moves after) evaluate whether the state is a win or loss
+		if terminal:
+			winner = C4_determine_winner(state)
+			return C4_TQRL_Player.TERMINAL_WEIGHTS["BASE"] if winner is None \
+				else C4_TQRL_Player.TERMINAL_WEIGHTS["WIN"] if winner == self.marker \
+				else C4_TQRL_Player.TERMINAL_WEIGHTS["LOSE"]
+
+		return C4_assess_partial_state(state, self.marker, C4_TQRL_Player.PARTIAL_WEIGHTS)
+
+
+class C4_DQL_Player(C4_Player):
+	TERMINAL_WEIGHTS = {
+		"WIN": 100,
+		"BASE": 0,
+		"LOSE": -100
+	}
+
+	# mirror desirable states with (own tokens, empty tokens) in any given sequence of 4 grid spaces.
+	PARTIAL_WEIGHTS = {
+		(4, 0): 100,
+		(2, 2): 2,
+		(3, 1): 5
+	}
+
+	def __init__(self, game, team):
+		super().__init__(game, team)
+
+	def choose_next_move(self, state):
+		return DQN_RL.evaluate(
+			game="C4",
+			state=state,
+			team=self.marker,
+			utility_func=self.eval_state
+		)
+
+	def eval_state(self, state, terminal):
+		# if leaf state (no more moves after) evaluate whether the state is a win or loss
+		if terminal:
+			winner = C4_determine_winner(state)
+			return C4_DQL_Player.TERMINAL_WEIGHTS["BASE"] if winner is None \
+				else C4_DQL_Player.TERMINAL_WEIGHTS["WIN"] if winner == self.marker \
+				else C4_DQL_Player.TERMINAL_WEIGHTS["LOSE"]
+
+		return C4_assess_partial_state(state, self.marker, C4_DQL_Player.PARTIAL_WEIGHTS)

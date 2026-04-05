@@ -1,76 +1,1699 @@
-Baseline,Baseline,Player 1,7
-Baseline,Baseline,Player 2,8
-Baseline,Baseline,Player 2,8
-Baseline,Baseline,Player 2,8
+Player 1,Player 2,Winner,n_moves
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),7
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Player 2 (MinMax),0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Player 2 (MinMax),0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Player 2 (MinMax),0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Player 2 (MinMax),0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Player 2 (MinMax),0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Player 2 (MinMax),0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Player 2 (MinMax),0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Player 2 (MinMax),0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Player 2 (MinMax),0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Player 2 (MinMax),0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Player 2 (MinMax),0
+Baseline,,Draw,0
+Baseline,,Player 2 (MinMax),0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,9
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),7
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),7
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Draw,0
 Baseline,Baseline,Draw,9
-Baseline,Baseline,Draw,9
-Baseline,Baseline,Draw,9
-Baseline,Baseline,Draw,9
-Baseline,Baseline,Player 2,8
-Baseline,Baseline,Draw,9
-Baseline,Baseline,Player 2,8
-Baseline,Baseline,Player 2,8
-Baseline,Baseline,Player 2,8
-Baseline,Baseline,Draw,9
-Baseline,Baseline,Draw,9
-Baseline,Baseline,Draw,9
-Baseline,Baseline,Player 2,8
-Baseline,Baseline,Player 1,7
-Baseline,Baseline,Draw,9
-Baseline,Baseline,Draw,9
-Baseline,Baseline,Draw,9
-Baseline,Baseline,Player 2,8
-Baseline,Baseline,Draw,9
-Baseline,Baseline,Draw,9
-Baseline,Baseline,Player 2,8
-Baseline,Baseline,Player 2,8
-Baseline,Baseline,Draw,9
-Baseline,Baseline,Draw,9
-Baseline,Baseline,Player 2,8
-Baseline,Baseline,Draw,9
-Baseline,Baseline,Player 1,7
-Baseline,Baseline,Draw,9
-Baseline,Baseline,Player 1,7
-Baseline,Baseline,Player 1,7
-Baseline,Baseline,Draw,9
-Baseline,Baseline,Player 1,7
-Baseline,Baseline,Draw,9
-Baseline,Baseline,Player 2,8
-Baseline,Baseline,Player 1,7
-Baseline,Baseline,Player 1,7
-Baseline,Baseline,Player 2,8
-Baseline,Baseline,Player 2,8
-Baseline,Baseline,Draw,9
-Baseline,Baseline,Draw,9
-Baseline,Baseline,Player 1,7
-Baseline,Baseline,Player 2,8
-Baseline,Baseline,Draw,9
-Baseline,Baseline,Draw,9
-Baseline,Baseline,Draw,9
-Baseline,Baseline,Player 2,8
-Baseline,Baseline,Player 2,8
-Baseline,Baseline,Player 1,7
-Baseline,Baseline,Player 2,8
-Baseline,Baseline,Player 1,7
-Baseline,Baseline,Player 2,8
-Baseline,Baseline,Player 1,7
-Baseline,Baseline,Draw,9
-Baseline,Baseline,Draw,9
-Baseline,Baseline,Player 1,7
-Baseline,Baseline,Player 1,7
-Baseline,Baseline,Player 2,8
-Baseline,Baseline,Draw,9
-Baseline,Baseline,Player 2,8
-Baseline,Baseline,Draw,9
-Baseline,Baseline,Draw,9
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),7
+,Baseline,Player 1 (MinMax),0
+,Baseline,Player 1 (MinMax),0
+,Baseline,Player 1 (MinMax),0
+,Baseline,Player 1 (MinMax),0
+,Baseline,Player 1 (MinMax),0
+,Baseline,Player 1 (MinMax),0
+,Baseline,Player 1 (MinMax),0
+,Baseline,Player 1 (MinMax),0
+,Baseline,Player 1 (MinMax),0
+,Baseline,Player 1 (MinMax),0
+,Baseline,Player 1 (MinMax),0
+,Baseline,Player 1 (MinMax),0
+,Baseline,Player 1 (MinMax),0
+,Baseline,Player 1 (MinMax),0
+,Baseline,Player 1 (MinMax),0
+,Baseline,Player 1 (MinMax),0
+,Baseline,Player 1 (MinMax),0
+,Baseline,Player 1 (MinMax),0
+,Baseline,Player 1 (MinMax),0
+,Baseline,Player 1 (MinMax),0
+,Baseline,Player 1 (MinMax),0
+,Baseline,Player 1 (MinMax),0
+,Baseline,Player 1 (MinMax),0
+,Baseline,Player 1 (MinMax),0
+,Baseline,Player 1 (MinMax),0
+,Baseline,Player 1 (MinMax),0
+,Baseline,Player 1 (MinMax),0
+,Baseline,Player 1 (MinMax),0
+,Baseline,Player 1 (MinMax),0
+,Baseline,Player 1 (MinMax),0
+,Baseline,Player 1 (MinMax),0
+,Baseline,Player 1 (MinMax),0
+,Baseline,Player 1 (MinMax),0
+,Baseline,Player 1 (MinMax),0
+,Baseline,Player 1 (MinMax),0
+,Baseline,Player 1 (MinMax),0
+,Baseline,Player 1 (MinMax),0
+,Baseline,Player 1 (MinMax),0
+,Baseline,Player 1 (MinMax),0
+,Baseline,Player 1 (MinMax),0
+,Baseline,Player 1 (MinMax),0
+,Baseline,Player 1 (MinMax),0
+,Baseline,Player 1 (MinMax),0
+,Baseline,Player 1 (MinMax),0
+,Baseline,Player 1 (MinMax),0
+,Baseline,Player 1 (MinMax),0
+,Baseline,Player 1 (MinMax),0
+,Baseline,Player 1 (MinMax),0
+,Baseline,Player 1 (MinMax),0
+,Baseline,Player 1 (MinMax),0
+,Baseline,Player 1 (MinMax),0
+,Baseline,Player 1 (MinMax),0
+,Baseline,Player 1 (MinMax),0
+,Baseline,Player 1 (MinMax),0
+,Baseline,Player 1 (MinMax),0
+,Baseline,Player 1 (MinMax),0
+,Baseline,Player 1 (MinMax),0
+,Baseline,Player 1 (MinMax),0
+,Baseline,Player 1 (MinMax),0
+,Baseline,Player 1 (MinMax),0
+,Baseline,Player 1 (MinMax),0
+,Baseline,Player 1 (MinMax),0
+,Baseline,Player 1 (MinMax),0
+,Baseline,Player 1 (MinMax),0
+,Baseline,Player 1 (MinMax),0
+,Baseline,Player 1 (MinMax),0
+,Baseline,Player 1 (MinMax),0
+,Baseline,Player 1 (MinMax),0
+,Baseline,Player 1 (MinMax),0
+,Baseline,Player 1 (MinMax),0
+,Baseline,Player 1 (MinMax),0
+,Baseline,Player 1 (MinMax),0
+,Baseline,Player 1 (MinMax),0
+,Baseline,Player 1 (MinMax),0
+,Baseline,Player 1 (MinMax),0
+,Baseline,Player 1 (MinMax),0
+,Baseline,Player 1 (MinMax),0
+,Baseline,Player 1 (MinMax),0
+,Baseline,Player 1 (MinMax),0
+,Baseline,Player 1 (MinMax),0
+,Baseline,Player 1 (MinMax),0
+,Baseline,Player 1 (MinMax),0
+,Baseline,Player 1 (MinMax),0
+,Baseline,Player 1 (MinMax),0
+,Baseline,Player 1 (MinMax),0
+,Baseline,Player 1 (MinMax),0
+,Baseline,Player 1 (MinMax),0
+,Baseline,Player 1 (MinMax),0
+,Baseline,Player 1 (MinMax),0
+,Baseline,Player 1 (MinMax),0
+,Baseline,Player 1 (MinMax),0
+,Baseline,Player 1 (MinMax),0
+,Baseline,Player 1 (MinMax),0
+,Baseline,Player 1 (MinMax),0
+,Baseline,Player 1 (MinMax),0
+,Baseline,Player 1 (MinMax),0
+,Baseline,Player 1 (MinMax),0
+,Baseline,Player 1 (MinMax),0
+,Baseline,Player 1 (MinMax),0
+,Baseline,Player 1 (MinMax),0
+,Baseline,Player 1 (MinMax),7
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Player 2 (MinMax),0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Player 2 (MinMax),0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Player 2 (MinMax),0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Player 2 (MinMax),0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Player 2 (MinMax),0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Player 2 (MinMax),0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Player 2 (MinMax),0
+Baseline,,Draw,0
+Baseline,,Player 2 (MinMax),0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Player 2 (MinMax),0
+Baseline,,Draw,9
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Player 1 (Baseline),0
+Baseline,Baseline,Draw,0
+Baseline,Baseline,Player 1 (Baseline),7
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,9
+Baseline,,Player 1 (Baseline),0
+Baseline,,Player 1 (Baseline),0
+Baseline,,Player 1 (Baseline),0
+Baseline,,Player 1 (Baseline),0
+Baseline,,Player 1 (Baseline),0
+Baseline,,Player 1 (Baseline),0
+Baseline,,Player 1 (Baseline),0
+Baseline,,Player 1 (Baseline),0
+Baseline,,Player 1 (Baseline),0
+Baseline,,Player 1 (Baseline),0
+Baseline,,Player 1 (Baseline),0
+Baseline,,Player 1 (Baseline),0
+Baseline,,Draw,0
+Baseline,,Player 1 (Baseline),0
+Baseline,,Player 1 (Baseline),0
+Baseline,,Player 1 (Baseline),0
+Baseline,,Player 1 (Baseline),0
+Baseline,,Player 1 (Baseline),0
+Baseline,,Player 1 (Baseline),0
+Baseline,,Player 1 (Baseline),0
+Baseline,,Player 1 (Baseline),0
+Baseline,,Player 1 (Baseline),0
+Baseline,,Player 1 (Baseline),0
+Baseline,,Player 1 (Baseline),0
+Baseline,,Player 1 (Baseline),0
+Baseline,,Player 1 (Baseline),0
+Baseline,,Player 1 (Baseline),0
+Baseline,,Player 1 (Baseline),0
+Baseline,,Player 1 (Baseline),0
+Baseline,,Draw,0
+Baseline,,Player 1 (Baseline),0
+Baseline,,Player 1 (Baseline),0
+Baseline,,Player 1 (Baseline),0
+Baseline,,Player 1 (Baseline),0
+Baseline,,Player 1 (Baseline),0
+Baseline,,Player 1 (Baseline),0
+Baseline,,Player 1 (Baseline),0
+Baseline,,Player 1 (Baseline),0
+Baseline,,Player 1 (Baseline),0
+Baseline,,Player 1 (Baseline),0
+Baseline,,Player 1 (Baseline),0
+Baseline,,Player 1 (Baseline),0
+Baseline,,Player 1 (Baseline),0
+Baseline,,Player 1 (Baseline),0
+Baseline,,Player 1 (Baseline),0
+Baseline,,Player 1 (Baseline),0
+Baseline,,Draw,0
+Baseline,,Player 1 (Baseline),0
+Baseline,,Draw,0
+Baseline,,Player 1 (Baseline),0
+Baseline,,Player 1 (Baseline),7
+,Baseline,Player 2 (Baseline),0
+,Baseline,Draw,0
+,Baseline,Player 2 (Baseline),0
+,Baseline,Player 2 (Baseline),0
+,Baseline,Draw,0
+,Baseline,Draw,0
+,Baseline,Draw,0
+,Baseline,Player 2 (Baseline),0
+,Baseline,Player 2 (Baseline),0
+,Baseline,Player 2 (Baseline),0
+,Baseline,Player 2 (Baseline),0
+,Baseline,Player 2 (Baseline),0
+,Baseline,Player 2 (Baseline),0
+,Baseline,Player 1 (Tabular QRL),0
+,Baseline,Draw,0
+,Baseline,Player 2 (Baseline),0
+,Baseline,Draw,0
+,Baseline,Player 2 (Baseline),0
+,Baseline,Player 2 (Baseline),0
+,Baseline,Player 2 (Baseline),0
+,Baseline,Player 2 (Baseline),0
+,Baseline,Player 2 (Baseline),0
+,Baseline,Player 2 (Baseline),0
+,Baseline,Player 1 (Tabular QRL),0
+,Baseline,Player 2 (Baseline),0
+,Baseline,Player 2 (Baseline),0
+,Baseline,Player 2 (Baseline),0
+,Baseline,Player 2 (Baseline),0
+,Baseline,Draw,0
+,Baseline,Draw,0
+,Baseline,Draw,0
+,Baseline,Draw,0
+,Baseline,Player 2 (Baseline),0
+,Baseline,Player 2 (Baseline),0
+,Baseline,Player 2 (Baseline),0
+,Baseline,Player 2 (Baseline),0
+,Baseline,Player 2 (Baseline),0
+,Baseline,Player 2 (Baseline),0
+,Baseline,Player 2 (Baseline),0
+,Baseline,Player 2 (Baseline),0
+,Baseline,Draw,0
+,Baseline,Player 2 (Baseline),0
+,Baseline,Player 2 (Baseline),0
+,Baseline,Player 1 (Tabular QRL),0
+,Baseline,Player 2 (Baseline),0
+,Baseline,Player 1 (Tabular QRL),0
+,Baseline,Player 2 (Baseline),0
+,Baseline,Draw,0
+,Baseline,Player 2 (Baseline),0
+,Baseline,Player 1 (Tabular QRL),0
+,Baseline,Player 2 (Baseline),6
+Baseline,,Player 1 (Baseline),0
+Baseline,,Player 1 (Baseline),0
+Baseline,,Player 1 (Baseline),0
+Baseline,,Player 1 (Baseline),0
+Baseline,,Player 1 (Baseline),0
+Baseline,,Player 1 (Baseline),0
+Baseline,,Player 1 (Baseline),0
+Baseline,,Player 1 (Baseline),0
+Baseline,,Player 1 (Baseline),0
+Baseline,,Player 1 (Baseline),0
+Baseline,,Player 1 (Baseline),0
+Baseline,,Player 1 (Baseline),0
+Baseline,,Player 1 (Baseline),0
+Baseline,,Player 1 (Baseline),0
+Baseline,,Player 1 (Baseline),0
+Baseline,,Player 1 (Baseline),0
+Baseline,,Player 1 (Baseline),0
+Baseline,,Player 1 (Baseline),0
+Baseline,,Player 1 (Baseline),0
+Baseline,,Player 1 (Baseline),0
+Baseline,,Player 1 (Baseline),0
+Baseline,,Player 1 (Baseline),0
+Baseline,,Player 1 (Baseline),0
+Baseline,,Player 1 (Baseline),0
+Baseline,,Player 1 (Baseline),0
+Baseline,,Player 1 (Baseline),0
+Baseline,,Player 1 (Baseline),0
+Baseline,,Player 1 (Baseline),0
+Baseline,,Player 1 (Baseline),0
+Baseline,,Player 1 (Baseline),0
+Baseline,,Player 1 (Baseline),0
+Baseline,,Draw,0
+Baseline,,Player 1 (Baseline),0
+Baseline,,Player 1 (Baseline),0
+Baseline,,Player 1 (Baseline),0
+Baseline,,Player 1 (Baseline),0
+Baseline,,Player 1 (Baseline),0
+Baseline,,Player 1 (Baseline),0
+Baseline,,Player 1 (Baseline),0
+Baseline,,Player 1 (Baseline),0
+Baseline,,Player 1 (Baseline),0
+Baseline,,Player 1 (Baseline),0
+Baseline,,Player 1 (Baseline),0
+Baseline,,Player 1 (Baseline),0
+Baseline,,Player 1 (Baseline),0
+Baseline,,Player 1 (Baseline),0
+Baseline,,Player 1 (Baseline),0
+Baseline,,Player 1 (Baseline),0
+Baseline,,Player 1 (Baseline),0
+Baseline,,Player 1 (Baseline),0
+Baseline,,Player 1 (Baseline),7
+,Baseline,Player 2 (Baseline),0
+,Baseline,Player 2 (Baseline),0
+,Baseline,Player 2 (Baseline),0
+,Baseline,Player 2 (Baseline),0
+,Baseline,Player 2 (Baseline),0
+,Baseline,Player 2 (Baseline),0
+,Baseline,Player 2 (Baseline),0
+,Baseline,Player 2 (Baseline),0
+,Baseline,Player 2 (Baseline),0
+,Baseline,Player 2 (Baseline),0
+,Baseline,Draw,0
+,Baseline,Player 2 (Baseline),0
+,Baseline,Draw,0
+,Baseline,Player 2 (Baseline),0
+,Baseline,Player 2 (Baseline),0
+,Baseline,Player 2 (Baseline),0
+,Baseline,Player 2 (Baseline),0
+,Baseline,Player 2 (Baseline),0
+,Baseline,Draw,0
+,Baseline,Player 2 (Baseline),0
+,Baseline,Player 2 (Baseline),0
+,Baseline,Player 2 (Baseline),0
+,Baseline,Player 2 (Baseline),0
+,Baseline,Draw,0
+,Baseline,Player 2 (Baseline),0
+,Baseline,Player 2 (Baseline),0
+,Baseline,Player 2 (Baseline),0
+,Baseline,Player 2 (Baseline),0
+,Baseline,Player 2 (Baseline),0
+,Baseline,Player 2 (Baseline),0
+,Baseline,Player 2 (Baseline),0
+,Baseline,Player 2 (Baseline),0
+,Baseline,Player 2 (Baseline),0
+,Baseline,Player 2 (Baseline),0
+,Baseline,Player 2 (Baseline),0
+,Baseline,Player 2 (Baseline),0
+,Baseline,Player 2 (Baseline),0
+,Baseline,Player 2 (Baseline),0
+,Baseline,Player 2 (Baseline),0
+,Baseline,Player 2 (Baseline),0
+,Baseline,Player 2 (Baseline),0
+,Baseline,Player 2 (Baseline),0
+,Baseline,Player 2 (Baseline),0
+,Baseline,Player 2 (Baseline),0
+,Baseline,Player 2 (Baseline),0
+,Baseline,Player 2 (Baseline),0
+,Baseline,Player 2 (Baseline),0
+,Baseline,Player 2 (Baseline),0
+,Baseline,Player 2 (Baseline),0
+,Baseline,Player 2 (Baseline),0
+,Baseline,Player 2 (Baseline),6
+,,Player 1 (MinMax),0
+,,Player 1 (MinMax),0
+,,Player 1 (MinMax),0
+,,Player 1 (MinMax),0
+,,Player 1 (MinMax),0
+,,Player 1 (MinMax),0
+,,Player 1 (MinMax),0
+,,Player 1 (MinMax),0
+,,Player 1 (MinMax),0
+,,Player 1 (MinMax),0
+,,Player 1 (MinMax),0
+,,Player 1 (MinMax),0
+,,Player 1 (MinMax),0
+,,Player 1 (MinMax),0
+,,Draw,0
+,,Draw,0
+,,Player 1 (MinMax),0
+,,Player 1 (MinMax),0
+,,Player 1 (MinMax),0
+,,Player 1 (MinMax),0
+,,Player 1 (MinMax),0
+,,Player 1 (MinMax),0
+,,Draw,0
+,,Player 1 (MinMax),0
+,,Player 1 (MinMax),0
+,,Player 1 (MinMax),0
+,,Player 1 (MinMax),0
+,,Player 1 (MinMax),0
+,,Player 1 (MinMax),0
+,,Draw,0
+,,Player 1 (MinMax),0
+,,Draw,0
+,,Player 1 (MinMax),0
+,,Player 1 (MinMax),0
+,,Player 1 (MinMax),0
+,,Player 1 (MinMax),0
+,,Player 1 (MinMax),0
+,,Player 1 (MinMax),0
+,,Player 1 (MinMax),0
+,,Player 1 (MinMax),0
+,,Player 1 (MinMax),0
+,,Player 1 (MinMax),0
+,,Player 1 (MinMax),0
+,,Player 1 (MinMax),0
+,,Player 1 (MinMax),0
+,,Player 1 (MinMax),0
+,,Player 1 (MinMax),0
+,,Player 1 (MinMax),0
+,,Player 1 (MinMax),0
+,,Player 1 (MinMax),0
+,,Player 1 (MinMax),7
+,,Draw,0
+,,Player 2 (MinMax),0
+,,Player 2 (MinMax),0
+,,Draw,0
+,,Player 2 (MinMax),0
+,,Player 2 (MinMax),0
+,,Player 2 (MinMax),0
+,,Player 2 (MinMax),0
+,,Player 2 (MinMax),0
+,,Player 2 (MinMax),0
+,,Player 2 (MinMax),0
+,,Player 2 (MinMax),0
+,,Draw,0
+,,Player 2 (MinMax),0
+,,Draw,0
+,,Player 2 (MinMax),0
+,,Player 2 (MinMax),0
+,,Player 2 (MinMax),0
+,,Player 2 (MinMax),0
+,,Player 2 (MinMax),0
+,,Player 2 (MinMax),0
+,,Draw,0
+,,Player 2 (MinMax),0
+,,Draw,0
+,,Player 2 (MinMax),0
+,,Player 2 (MinMax),0
+,,Player 2 (MinMax),0
+,,Player 2 (MinMax),0
+,,Player 2 (MinMax),0
+,,Player 2 (MinMax),0
+,,Player 2 (MinMax),0
+,,Player 2 (MinMax),0
+,,Player 2 (MinMax),0
+,,Player 2 (MinMax),0
+,,Draw,0
+,,Player 2 (MinMax),0
+,,Player 2 (MinMax),0
+,,Draw,0
+,,Player 2 (MinMax),0
+,,Player 2 (MinMax),0
+,,Player 2 (MinMax),0
+,,Player 2 (MinMax),0
+,,Player 2 (MinMax),0
+,,Player 2 (MinMax),0
+,,Player 2 (MinMax),0
+,,Draw,0
+,,Player 2 (MinMax),0
+,,Player 2 (MinMax),0
+,,Player 2 (MinMax),0
+,,Draw,0
+,,Player 2 (MinMax),6
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Player 2 (MinMax-AB),0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Player 2 (MinMax-AB),0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Player 2 (MinMax-AB),0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Player 2 (MinMax-AB),0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,0
+Baseline,,Draw,9
+,Baseline,Player 1 (MinMax-AB),0
+,Baseline,Player 1 (MinMax-AB),0
+,Baseline,Player 1 (MinMax-AB),0
+,Baseline,Player 1 (MinMax-AB),0
+,Baseline,Player 1 (MinMax-AB),0
+,Baseline,Player 1 (MinMax-AB),0
+,Baseline,Player 1 (MinMax-AB),0
+,Baseline,Player 1 (MinMax-AB),0
+,Baseline,Player 1 (MinMax-AB),0
+,Baseline,Player 1 (MinMax-AB),0
+,Baseline,Player 1 (MinMax-AB),0
+,Baseline,Player 1 (MinMax-AB),0
+,Baseline,Player 1 (MinMax-AB),0
+,Baseline,Player 1 (MinMax-AB),0
+,Baseline,Player 1 (MinMax-AB),0
+,Baseline,Player 1 (MinMax-AB),0
+,Baseline,Player 1 (MinMax-AB),0
+,Baseline,Player 1 (MinMax-AB),0
+,Baseline,Player 1 (MinMax-AB),0
+,Baseline,Player 1 (MinMax-AB),0
+,Baseline,Player 1 (MinMax-AB),0
+,Baseline,Player 1 (MinMax-AB),0
+,Baseline,Player 1 (MinMax-AB),0
+,Baseline,Player 1 (MinMax-AB),0
+,Baseline,Player 1 (MinMax-AB),0
+,Baseline,Player 1 (MinMax-AB),0
+,Baseline,Player 1 (MinMax-AB),0
+,Baseline,Player 1 (MinMax-AB),0
+,Baseline,Player 1 (MinMax-AB),0
+,Baseline,Player 1 (MinMax-AB),0
+,Baseline,Player 1 (MinMax-AB),0
+,Baseline,Player 1 (MinMax-AB),0
+,Baseline,Player 1 (MinMax-AB),0
+,Baseline,Player 1 (MinMax-AB),0
+,Baseline,Player 1 (MinMax-AB),0
+,Baseline,Player 1 (MinMax-AB),0
+,Baseline,Player 1 (MinMax-AB),0
+,Baseline,Player 1 (MinMax-AB),0
+,Baseline,Player 1 (MinMax-AB),0
+,Baseline,Player 1 (MinMax-AB),0
+,Baseline,Player 1 (MinMax-AB),0
+,Baseline,Player 1 (MinMax-AB),0
+,Baseline,Player 1 (MinMax-AB),0
+,Baseline,Player 1 (MinMax-AB),0
+,Baseline,Player 1 (MinMax-AB),0
+,Baseline,Player 1 (MinMax-AB),0
+,Baseline,Player 1 (MinMax-AB),0
+,Baseline,Player 1 (MinMax-AB),0
+,Baseline,Player 1 (MinMax-AB),0
+,Baseline,Player 1 (MinMax-AB),0
+,Baseline,Player 1 (MinMax-AB),7
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,9
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,0
+,,Draw,9
+,,Player 1 (Tabular QRL),0
+,,Player 1 (Tabular QRL),0
+,,Player 1 (Tabular QRL),0
+,,Player 2 (Tabular QRL),0
+,,Player 1 (Tabular QRL),0
+,,Draw,0
+,,Player 1 (Tabular QRL),0
+,,Player 1 (Tabular QRL),0
+,,Player 1 (Tabular QRL),0
+,,Player 2 (Tabular QRL),0
+,,Player 1 (Tabular QRL),0
+,,Player 2 (Tabular QRL),0
+,,Player 1 (Tabular QRL),0
+,,Player 1 (Tabular QRL),0
+,,Player 1 (Tabular QRL),0
+,,Draw,0
+,,Player 2 (Tabular QRL),0
+,,Player 1 (Tabular QRL),0
+,,Player 1 (Tabular QRL),0
+,,Player 1 (Tabular QRL),0
+,,Player 1 (Tabular QRL),0
+,,Player 2 (Tabular QRL),0
+,,Player 1 (Tabular QRL),0
+,,Player 2 (Tabular QRL),0
+,,Player 2 (Tabular QRL),0
+,,Player 2 (Tabular QRL),0
+,,Player 2 (Tabular QRL),0
+,,Player 1 (Tabular QRL),0
+,,Player 2 (Tabular QRL),0
+,,Player 1 (Tabular QRL),0
+,,Player 1 (Tabular QRL),0
+,,Player 2 (Tabular QRL),0
+,,Draw,0
+,,Player 1 (Tabular QRL),0
+,,Draw,0
+,,Player 1 (Tabular QRL),0
+,,Draw,0
+,,Player 2 (Tabular QRL),0
+,,Player 1 (Tabular QRL),0
+,,Player 1 (Tabular QRL),0
+,,Player 1 (Tabular QRL),0
+,,Player 2 (Tabular QRL),0
+,,Player 2 (Tabular QRL),0
+,,Player 1 (Tabular QRL),0
+,,Draw,0
+,,Draw,0
+,,Player 1 (Tabular QRL),0
+,,Player 1 (Tabular QRL),0
+,,Player 1 (Tabular QRL),0
+,,Draw,0
+,,Draw,9
+,,Player 1 (DQN-RL),0
+,,Player 1 (DQN-RL),0
+,,Draw,0
+,,Player 2 (DQN-RL),0
+,,Player 1 (DQN-RL),0
+,,Player 2 (DQN-RL),0
+,,Player 1 (DQN-RL),0
+,,Player 1 (DQN-RL),0
+,,Player 1 (DQN-RL),0
+,,Draw,0
+,,Player 1 (DQN-RL),0
+,,Player 2 (DQN-RL),0
+,,Player 1 (DQN-RL),0
+,,Player 1 (DQN-RL),0
+,,Player 1 (DQN-RL),0
+,,Draw,0
+,,Player 1 (DQN-RL),0
+,,Player 2 (DQN-RL),0
+,,Player 2 (DQN-RL),0
+,,Player 2 (DQN-RL),0
+,,Player 1 (DQN-RL),0
+,,Player 1 (DQN-RL),0
+,,Player 1 (DQN-RL),0
+,,Player 2 (DQN-RL),0
+,,Draw,0
+,,Player 2 (DQN-RL),0
+,,Draw,0
+,,Player 1 (DQN-RL),0
+,,Draw,0
+,,Player 2 (DQN-RL),0
+,,Player 2 (DQN-RL),0
+,,Player 1 (DQN-RL),0
+,,Player 1 (DQN-RL),0
+,,Draw,0
+,,Player 1 (DQN-RL),0
+,,Draw,0
+,,Player 2 (DQN-RL),0
+,,Player 2 (DQN-RL),0
+,,Player 1 (DQN-RL),0
+,,Player 2 (DQN-RL),0
+,,Player 1 (DQN-RL),0
+,,Player 1 (DQN-RL),0
+,,Player 2 (DQN-RL),0
+,,Player 1 (DQN-RL),0
+,,Player 1 (DQN-RL),0
+,,Player 1 (DQN-RL),0
+,,Player 1 (DQN-RL),0
+,,Player 2 (DQN-RL),0
+,,Player 1 (DQN-RL),0
+,,Player 1 (DQN-RL),0
+,,Player 1 (DQN-RL),5
+,,Draw,0
+,,Player 2 (DQN-RL),0
+,,Player 1 (Tabular QRL),0
+,,Player 1 (Tabular QRL),0
+,,Draw,0
+,,Player 1 (Tabular QRL),0
+,,Player 1 (Tabular QRL),0
+,,Player 1 (Tabular QRL),0
+,,Player 1 (Tabular QRL),0
+,,Player 1 (Tabular QRL),0
+,,Player 1 (Tabular QRL),0
+,,Player 1 (Tabular QRL),0
+,,Player 1 (Tabular QRL),0
+,,Player 1 (Tabular QRL),0
+,,Player 1 (Tabular QRL),0
+,,Draw,0
+,,Player 2 (DQN-RL),0
+,,Player 1 (Tabular QRL),0
+,,Player 1 (Tabular QRL),0
+,,Player 1 (Tabular QRL),0
+,,Player 2 (DQN-RL),0
+,,Player 1 (Tabular QRL),0
+,,Player 1 (Tabular QRL),0
+,,Player 1 (Tabular QRL),0
+,,Player 2 (DQN-RL),0
+,,Player 1 (Tabular QRL),0
+,,Player 1 (Tabular QRL),0
+,,Player 1 (Tabular QRL),0
+,,Player 1 (Tabular QRL),0
+,,Player 2 (DQN-RL),0
+,,Player 2 (DQN-RL),0
+,,Player 2 (DQN-RL),0
+,,Player 1 (Tabular QRL),0
+,,Player 1 (Tabular QRL),0
+,,Player 1 (Tabular QRL),0
+,,Player 1 (Tabular QRL),0
+,,Player 1 (Tabular QRL),0
+,,Player 1 (Tabular QRL),0
+,,Player 1 (Tabular QRL),0
+,,Player 1 (Tabular QRL),0
+,,Player 1 (Tabular QRL),0
+,,Player 2 (DQN-RL),0
+,,Player 1 (Tabular QRL),0
+,,Player 1 (Tabular QRL),0
+,,Player 2 (DQN-RL),0
+,,Player 1 (Tabular QRL),0
+,,Player 1 (Tabular QRL),0
+,,Player 1 (Tabular QRL),0
+,,Player 2 (DQN-RL),0
+,,Player 2 (DQN-RL),0
+,,Player 2 (DQN-RL),8
+,,Player 1 (DQN-RL),0
+,,Player 1 (DQN-RL),0
+,,Player 2 (Tabular QRL),0
+,,Player 1 (DQN-RL),0
+,,Player 1 (DQN-RL),0
+,,Player 1 (DQN-RL),0
+,,Player 1 (DQN-RL),0
+,,Player 2 (Tabular QRL),0
+,,Player 2 (Tabular QRL),0
+,,Player 1 (DQN-RL),0
+,,Player 1 (DQN-RL),0
+,,Draw,0
+,,Player 1 (DQN-RL),0
+,,Player 1 (DQN-RL),0
+,,Player 1 (DQN-RL),0
+,,Player 1 (DQN-RL),0
+,,Player 1 (DQN-RL),0
+,,Player 1 (DQN-RL),0
+,,Player 1 (DQN-RL),0
+,,Player 1 (DQN-RL),0
+,,Player 1 (DQN-RL),0
+,,Player 1 (DQN-RL),0
+,,Player 1 (DQN-RL),0
+,,Player 1 (DQN-RL),0
+,,Player 1 (DQN-RL),0
+,,Player 2 (Tabular QRL),0
+,,Draw,0
+,,Player 1 (DQN-RL),0
+,,Player 1 (DQN-RL),0
+,,Player 1 (DQN-RL),0
+,,Player 2 (Tabular QRL),0
+,,Player 1 (DQN-RL),0
+,,Player 1 (DQN-RL),0
+,,Draw,0
+,,Player 1 (DQN-RL),0
+,,Player 1 (DQN-RL),0
+,,Player 1 (DQN-RL),0
+,,Player 1 (DQN-RL),0
+,,Player 1 (DQN-RL),0
+,,Player 1 (DQN-RL),0
+,,Draw,0
+,,Player 2 (Tabular QRL),0
+,,Draw,0
+,,Player 1 (DQN-RL),0
+,,Player 2 (Tabular QRL),0
+,,Player 2 (Tabular QRL),0
+,,Player 2 (Tabular QRL),0
+,,Player 2 (Tabular QRL),0
+,,Player 1 (DQN-RL),0
+,,Player 2 (Tabular QRL),0
+,,Player 1 (DQN-RL),7
 Baseline,Baseline,Draw,9
 Human,Human,Player 1,5
 Human,Baseline,Draw,9
-Human,Baseline,Draw,9
-Human,Baseline,Player 1,7
-Human,Baseline,Draw,9
-Human,Baseline,Player 1,7
-Human,Baseline,Player 1,7
-Human,Baseline,Draw,9
-Human,Baseline,Player 1,7
-Human,Baseline,Player 1,7
+Human,,Player 1,5
